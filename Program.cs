@@ -1,3 +1,5 @@
+using Handbook_of_amaters_try;
+
 namespace Handbook_of_radio_amateurs
 {
     internal static class Program
