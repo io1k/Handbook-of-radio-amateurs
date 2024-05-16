@@ -140,7 +140,7 @@
             btSearch.Name = "btSearch";
             btSearch.Size = new Size(94, 29);
             btSearch.TabIndex = 0;
-            btSearch.Text = "Пошук";
+            btSearch.Text = "Search";
             btSearch.UseVisualStyleBackColor = true;
             btSearch.Click += btSearch_Click;
             // 
@@ -172,7 +172,7 @@
             // typeColum
             // 
             typeColum.DataPropertyName = "Type";
-            typeColum.HeaderText = "Тип";
+            typeColum.HeaderText = "Type";
             typeColum.MinimumWidth = 6;
             typeColum.Name = "typeColum";
             typeColum.Width = 125;
@@ -180,7 +180,7 @@
             // voltageColum
             // 
             voltageColum.DataPropertyName = "Voltage";
-            voltageColum.HeaderText = "Напруга";
+            voltageColum.HeaderText = "Voltage";
             voltageColum.MinimumWidth = 6;
             voltageColum.Name = "voltageColum";
             voltageColum.Width = 125;
@@ -188,7 +188,7 @@
             // currentColum
             // 
             currentColum.DataPropertyName = "Current";
-            currentColum.HeaderText = "Поточний струм";
+            currentColum.HeaderText = "Current";
             currentColum.MinimumWidth = 6;
             currentColum.Name = "currentColum";
             currentColum.Width = 125;
@@ -196,7 +196,7 @@
             // capasityColum
             // 
             capasityColum.DataPropertyName = "Capasity";
-            capasityColum.HeaderText = "Ємність ";
+            capasityColum.HeaderText = "Capasity";
             capasityColum.MinimumWidth = 6;
             capasityColum.Name = "capasityColum";
             capasityColum.Width = 125;
@@ -204,7 +204,7 @@
             // allowebleTempColum
             // 
             allowebleTempColum.DataPropertyName = "AllowableTemperature";
-            allowebleTempColum.HeaderText = "Доступна температура";
+            allowebleTempColum.HeaderText = "Available temperature";
             allowebleTempColum.MinimumWidth = 6;
             allowebleTempColum.Name = "allowebleTempColum";
             allowebleTempColum.Width = 125;
@@ -212,14 +212,14 @@
             // priceColum
             // 
             priceColum.DataPropertyName = "Price";
-            priceColum.HeaderText = "Ціна";
+            priceColum.HeaderText = "Price";
             priceColum.MinimumWidth = 6;
             priceColum.Name = "priceColum";
             priceColum.Width = 125;
             // 
             // btDetails
             // 
-            btDetails.HeaderText = "Детальніше";
+            btDetails.HeaderText = "More detail";
             btDetails.MinimumWidth = 6;
             btDetails.Name = "btDetails";
             btDetails.Width = 125;
@@ -229,15 +229,15 @@
             lbMainDetailTypeSelect.AutoSize = true;
             lbMainDetailTypeSelect.Location = new Point(45, 41);
             lbMainDetailTypeSelect.Name = "lbMainDetailTypeSelect";
-            lbMainDetailTypeSelect.Size = new Size(146, 20);
+            lbMainDetailTypeSelect.Size = new Size(124, 20);
             lbMainDetailTypeSelect.TabIndex = 2;
-            lbMainDetailTypeSelect.Text = "Виберіит тип деталі";
+            lbMainDetailTypeSelect.Text = "Select detail type";
             // 
             // combDetailType
             // 
             combDetailType.FormattingEnabled = true;
-            combDetailType.Items.AddRange(new object[] { "Транзистор", "Конденсатор", "Резистор", "Діод" });
-            combDetailType.Location = new Point(45, 74);
+            combDetailType.Items.AddRange(new object[] { "Transistor", "Capacitor", "Resistor", "Diode" });
+            combDetailType.Location = new Point(45, 75);
             combDetailType.Name = "combDetailType";
             combDetailType.Size = new Size(151, 28);
             combDetailType.TabIndex = 3;
@@ -245,7 +245,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(45, 247);
+            textBox2.Location = new Point(45, 241);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(125, 27);
             textBox2.TabIndex = 5;
@@ -267,7 +267,7 @@
             // combTransistorType
             // 
             combTransistorType.FormattingEnabled = true;
-            combTransistorType.Items.AddRange(new object[] { "Польовий", "Біполярний" });
+            combTransistorType.Items.AddRange(new object[] { "Field-effect", "Bipolar" });
             combTransistorType.Location = new Point(45, 167);
             combTransistorType.Name = "combTransistorType";
             combTransistorType.Size = new Size(151, 28);
@@ -279,9 +279,9 @@
             lbTransistorType.AutoSize = true;
             lbTransistorType.Location = new Point(45, 133);
             lbTransistorType.Name = "lbTransistorType";
-            lbTransistorType.Size = new Size(190, 20);
+            lbTransistorType.Size = new Size(147, 20);
             lbTransistorType.TabIndex = 8;
-            lbTransistorType.Text = "Виберіть тип транзистора";
+            lbTransistorType.Text = "Select transistor type";
             lbTransistorType.UseWaitCursor = true;
             lbTransistorType.Visible = false;
             // 
@@ -290,9 +290,9 @@
             lbVoltage.AutoSize = true;
             lbVoltage.Location = new Point(45, 208);
             lbVoltage.Name = "lbVoltage";
-            lbVoltage.Size = new Size(67, 20);
+            lbVoltage.Size = new Size(60, 20);
             lbVoltage.TabIndex = 9;
-            lbVoltage.Text = "Напруга";
+            lbVoltage.Text = "Voltage";
             lbVoltage.Visible = false;
             // 
             // lbCurrent
@@ -301,9 +301,9 @@
             lbCurrent.Location = new Point(45, 288);
             lbCurrent.Name = "lbCurrent";
             lbCurrent.RightToLeft = RightToLeft.No;
-            lbCurrent.Size = new Size(123, 20);
+            lbCurrent.Size = new Size(57, 20);
             lbCurrent.TabIndex = 10;
-            lbCurrent.Text = "Поточний струм";
+            lbCurrent.Text = "Current";
             lbCurrent.Visible = false;
             lbCurrent.Click += label2_Click;
             // 
@@ -312,14 +312,15 @@
             lbCapasitorType.AutoSize = true;
             lbCapasitorType.Location = new Point(45, 133);
             lbCapasitorType.Name = "lbCapasitorType";
-            lbCapasitorType.Size = new Size(200, 20);
+            lbCapasitorType.Size = new Size(148, 20);
             lbCapasitorType.TabIndex = 11;
-            lbCapasitorType.Text = "Виберіть тип конденсатора";
+            lbCapasitorType.Text = "Select capacitor type";
+            lbCapasitorType.Click += lbCapasitorType_Click;
             // 
             // combCapasitorType
             // 
             combCapasitorType.FormattingEnabled = true;
-            combCapasitorType.Items.AddRange(new object[] { "Низковольтний" });
+            combCapasitorType.Items.AddRange(new object[] { "Low voltage" });
             combCapasitorType.Location = new Point(45, 167);
             combCapasitorType.Name = "combCapasitorType";
             combCapasitorType.Size = new Size(151, 28);
@@ -330,22 +331,22 @@
             lbAllowableTemp.AutoSize = true;
             lbAllowableTemp.Location = new Point(45, 288);
             lbAllowableTemp.Name = "lbAllowableTemp";
-            lbAllowableTemp.Size = new Size(167, 20);
+            lbAllowableTemp.Size = new Size(161, 20);
             lbAllowableTemp.TabIndex = 13;
-            lbAllowableTemp.Text = "Доступна температура";
+            lbAllowableTemp.Text = "Available temperature ";
             // 
             // lbCapasity
             // 
             lbCapasity.AutoSize = true;
-            lbCapasity.Location = new Point(50, 390);
+            lbCapasity.Location = new Point(45, 381);
             lbCapasity.Name = "lbCapasity";
-            lbCapasity.Size = new Size(67, 20);
+            lbCapasity.Size = new Size(65, 20);
             lbCapasity.TabIndex = 14;
-            lbCapasity.Text = "Ємність ";
+            lbCapasity.Text = "Capasity";
             // 
             // tbCapasity
             // 
-            tbCapasity.Location = new Point(45, 426);
+            tbCapasity.Location = new Point(44, 414);
             tbCapasity.Name = "tbCapasity";
             tbCapasity.Size = new Size(125, 27);
             tbCapasity.TabIndex = 15;
@@ -386,7 +387,7 @@
             MaximumSize = new Size(1500, 700);
             MinimumSize = new Size(1500, 700);
             Name = "Form1";
-            Text = "Довідник радіолюбителя";
+            Text = "Handbook of radio amateurs";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -409,6 +410,7 @@
         private Label lbAllowableTemp;
         private Label lbCapasity;
         private TextBox tbCapasity;
+        private Button btAdmin;
         private DataGridViewImageColumn imgColum;
         private DataGridViewTextBoxColumn typeColum;
         private DataGridViewTextBoxColumn voltageColum;
@@ -417,6 +419,5 @@
         private DataGridViewTextBoxColumn allowebleTempColum;
         private DataGridViewTextBoxColumn priceColum;
         private DataGridViewButtonColumn btDetails;
-        private Button btAdmin;
     }
 }

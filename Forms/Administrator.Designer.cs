@@ -50,7 +50,7 @@
             ClientSize = new Size(1083, 522);
             Controls.Add(dataGridView1);
             Name = "Administrator";
-            Text = "Вікно адміністрування";
+            Text = "Administration window";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }

@@ -73,9 +73,9 @@
             label1.ForeColor = SystemColors.ActiveCaptionText;
             label1.Location = new Point(11, 329);
             label1.Name = "label1";
-            label1.Size = new Size(206, 20);
+            label1.Size = new Size(120, 20);
             label1.TabIndex = 3;
-            label1.Text = "Посилання на маркет плейс";
+            label1.Text = "Link to purchase ";
             // 
             // Details
             // 

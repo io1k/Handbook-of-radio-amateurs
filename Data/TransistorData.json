@@ -3,9 +3,9 @@
     "Id": 1,
     "Name": "FQA24N50",
     "Price": 85,
-    "Description": "Предназначен для использования в источниках вторичного электропитания, в регуляторах, стабилизаторах и преобразователях, схемах управления электродвигателями и других блоках и узлах радиоэлектронной аппаратуры.",
+    "Description": "Intended for use in secondary power supplies, regulators, stabilizers and converters, electric motor control circuits and other blocks and assemblies of electronic equipment.",
     "Link": "https://rozetka.com.ua/ua/414990630/p414990630/",
-    "Type": "Польовий",
+    "Type": "Field-effect",
     "imageLink": "C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of amaters try\\Data\\src\\Transisots\\FQA24N50.jpg",
     "Voltage": 5,
     "Current": 24
@@ -16,7 +16,7 @@
     "Price": 152,
     "Description": "-",
     "Link": "https://rozetka.com.ua/ua/366773070/p366773070/",
-    "Type": "Біполярний",
+    "Type": "Bipolar",
     "imageLink": "C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of amaters try\\Data\\src\\Transisots\\IRF1010EPBF MOSFET N-Channel.jpg",
     "Voltage": 68,
     "Current": 88
@@ -27,7 +27,7 @@
     "Price": 379,
     "Description": "-",
     "Link": "https://rozetka.com.ua/ua/420678240/p420678240/",
-    "Type": "Біполярний",
+    "Type": "Bipolar",
     "imageLink": "C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of amaters try\\Data\\src\\Transisots\\MJ15024G.jpg",
     "Voltage": 5,
     "Current": 16
@@ -38,7 +38,7 @@
     "Price": 66,
     "Description": "-",
     "Link": "https://rozetka.com.ua/ua/414991737/p414991737/",
-    "Type": "Польовий",
+    "Type": "Field-effect",
     "imageLink": "C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of amaters try\\Data\\src\\Transisots\\КП903А.jpg",
     "Voltage": 20,
     "Current": 0.7

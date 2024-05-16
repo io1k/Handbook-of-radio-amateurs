@@ -51,9 +51,9 @@ namespace Handbook_of_amaters_try
 
             switch (combDetailType.Text.ToString())
             {
-                case "Транзистор":
+                case "Transistor":
 
-                    var transistor = proces.ReadDetails<Transistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of amaters try\\Data\\TransistorData.json");
+                    var transistor = proces.ReadDetails<Transistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\TransistorData.json");
                     var sortedtrans = proces.SortedTransistor(transistor, combTransistorType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text));
 
                     proces.FormPicture(sortedtrans);
@@ -63,8 +63,8 @@ namespace Handbook_of_amaters_try
                     dataGridView1.Columns["btDetails"].DisplayIndex = dataGridView1.ColumnCount - 1;
                     break;
 
-                case "Конденсатор":
-                    var capasitors = proces.ReadDetails<Capasitor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of amaters try\\Data\\CapasitorData.json");
+                case "Capasitor":
+                    var capasitors = proces.ReadDetails<Capasitor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\CapasitorData.json");
                     var sortedcapas = proces.SortedCapasitor(capasitors, combCapasitorType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(tbCapasity.Text), Convert.ToDouble(textBox3.Text));
 
                     proces.FormPicture(sortedcapas);
@@ -80,11 +80,11 @@ namespace Handbook_of_amaters_try
         {
             switch (combDetailType.Text.ToString())
             {
-                case "Транзистор":
+                case "Transistor":
                     Hide();
                     TransistorView();
                     break;
-                case "Конденсатор":
+                case "Capacitor":
                     Hide();
                     CapasitorView();
                     break;
@@ -119,6 +119,11 @@ namespace Handbook_of_amaters_try
         {
             PasswordForm passform = new PasswordForm("123456");
             passform.Show();
+        }
+
+        private void lbCapasitorType_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
