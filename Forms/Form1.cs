@@ -1,3 +1,4 @@
+using Handbook_of_amaters_try.Forms;
 using Handbook_of_radio_amateurs;
 using Handbook_of_radio_amauter.Data;
 using System.Collections;
@@ -22,7 +23,26 @@ namespace Handbook_of_amaters_try
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            Details detailsForm = new Details();
+            if (e.ColumnIndex == btDetails.Index && e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
 
+                dynamic selectedItem = selectedRow.DataBoundItem;
+                List<string> result = new List<string>();
+                foreach (var property in selectedItem.GetType().GetProperties())
+                {
+                    if (property.Name == "Id" || property.Name == "imageLink" || property.Name == "image" || property.Name == "imageLink" || property.Name == "Link")
+                    {
+                        continue;
+                    }
+                    result.Add(property.Name + ":  " + property.GetValue(selectedItem));
+                }
+                detailsForm.pbDetailImage.Image = selectedItem.image;
+                detailsForm.linkLabel1.Text = selectedItem.Link;
+                detailsForm.tbDetails.Text = string.Join(Environment.NewLine, result);
+                detailsForm.Show();
+            }
         }
 
         private void btSearch_Click(object sender, EventArgs e)
@@ -97,8 +117,8 @@ namespace Handbook_of_amaters_try
 
         private void btAdmin_Click(object sender, EventArgs e)
         {
-            //PasswordForm passform = new PasswordForm("123456");
-            //passform.Show();
+            PasswordForm passform = new PasswordForm("123456");
+            passform.Show();
         }
     }
 
