@@ -56,9 +56,9 @@
             lbEnterPassword.AutoSize = true;
             lbEnterPassword.Location = new Point(12, 9);
             lbEnterPassword.Name = "lbEnterPassword";
-            lbEnterPassword.Size = new Size(115, 20);
+            lbEnterPassword.Size = new Size(110, 20);
             lbEnterPassword.TabIndex = 2;
-            lbEnterPassword.Text = "Введіть пароль";
+            lbEnterPassword.Text = "Enter password";
             // 
             // PasswordForm
             // 
@@ -69,7 +69,7 @@
             Controls.Add(tbPassword);
             Controls.Add(btEnter);
             Name = "PasswordForm";
-            Text = "Адміністратор";
+            Text = "Administrator";
             ResumeLayout(false);
             PerformLayout();
         }

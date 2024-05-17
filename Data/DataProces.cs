@@ -12,12 +12,12 @@ namespace Handbook_of_radio_amauter.Data
 {
     internal class DataProces
     {
+        public DataProces() { } 
         public List<T> ReadDetails<T>(string filePath) 
         {
             string json = File.ReadAllText(filePath);
             return JsonSerializer.Deserialize<List<T>>(json);
         }
-
         public void FormPicture<T>(List<T> list)  where T : Detail
         {
             foreach (var item in list)

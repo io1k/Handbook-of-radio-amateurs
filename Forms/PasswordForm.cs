@@ -17,10 +17,13 @@ namespace Handbook_of_amaters_try.Forms
         private Form1 form1;
         private DataProces dataProces;
         private string password;
-        public PasswordForm(string pass)
+        public Administrator admin ;
+        private List<dynamic> DetailList;
+        public PasswordForm(string pass,List<dynamic> list)
         {
             InitializeComponent();
             password = pass;
+            DetailList = list;
         }
 
         private void tbPassword_TextChanged(object sender, EventArgs e)
@@ -30,18 +33,20 @@ namespace Handbook_of_amaters_try.Forms
 
         private void btEnter_Click(object sender, EventArgs e)
         {
-            if(password == tbPassword.Text)
+
+            if (password == tbPassword.Text)
             {
-                Administrator admin = new Administrator();
-                var list = dataProces.ReadDetails<Transistor>(dataProces.TakeDataListType(form1.combDetailType.ToString()));
-                admin.dataGridView1.DataSource = list;
+                admin = new Administrator();
+                admin.dataGridView1.DataSource = DetailList;
                 admin.Show();
+                this.Close();
             }
-            else 
+            else
             {
-                
+                MessageBox.Show("Wrong password");
             }
         }
-        
+
+
     }
 }

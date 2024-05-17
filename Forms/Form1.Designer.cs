@@ -97,6 +97,13 @@
             dataGridView1.Columns["imageLink"].Visible = false;
 
         }
+        public void SetIconSize()
+        {
+            Bitmap b1 = new Bitmap("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\input-onlinebitmaptools.bmp");
+            Bitmap b2 = new Bitmap(b1, new Size(50, 50));
+            btAdmin.Image = b2;
+
+        }
 
         #region Windows Form Designer generated code
 
@@ -106,7 +113,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             btSearch = new Button();
             dataGridView1 = new DataGridView();
             imgColum = new DataGridViewImageColumn();
@@ -355,7 +361,7 @@
             // 
             // btAdmin
             // 
-            btAdmin.Image = (Image)resources.GetObject("btAdmin.Image");
+            btAdmin.Image = Handbook_of_radio_amateurs.Properties.Resources.input_onlinebitmaptools;
             btAdmin.Location = new Point(275, 605);
             btAdmin.Name = "btAdmin";
             btAdmin.Size = new Size(48, 48);

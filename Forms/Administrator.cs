@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Handbook_of_radio_amateurs;
+using Handbook_of_radio_amauter.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace Handbook_of_amaters_try.Forms
 {
     public partial class Administrator : Form
     {
+        private DataProces dataProces;
         public Administrator()
         {
             InitializeComponent();

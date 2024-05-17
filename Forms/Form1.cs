@@ -15,10 +15,12 @@ namespace Handbook_of_amaters_try
 {
     public partial class Form1 : Form
     {
+        public List<dynamic> currentDetailList { get; set; }
         public Form1()
         {
             InitializeComponent();
             Hide();
+            SetIconSize();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -30,33 +32,49 @@ namespace Handbook_of_amaters_try
 
                 dynamic selectedItem = selectedRow.DataBoundItem;
                 List<string> result = new List<string>();
-                foreach (var property in selectedItem.GetType().GetProperties())
+                if (detailsForm != null && detailsForm.Visible)
                 {
-                    if (property.Name == "Id" || property.Name == "imageLink" || property.Name == "image" || property.Name == "imageLink" || property.Name == "Link")
+                    foreach (var property in selectedItem.GetType().GetProperties())
                     {
-                        continue;
+                        if (property.Name == "Id" || property.Name == "imageLink" || property.Name == "image" || property.Name == "imageLink" || property.Name == "Link")
+                        {
+                            continue;
+                        }
+                        result.Add(property.Name + ":  " + property.GetValue(selectedItem));
                     }
-                    result.Add(property.Name + ":  " + property.GetValue(selectedItem));
+                    detailsForm.pbDetailImage.Image = selectedItem.image;
+                    detailsForm.linkLabel1.Text = selectedItem.Link;
+                    detailsForm.tbDetails.Text = string.Join(Environment.NewLine, result);
+                    detailsForm.Activate();
                 }
-                detailsForm.pbDetailImage.Image = selectedItem.image;
-                detailsForm.linkLabel1.Text = selectedItem.Link;
-                detailsForm.tbDetails.Text = string.Join(Environment.NewLine, result);
-                detailsForm.Show();
+                else
+                {
+                    foreach (var property in selectedItem.GetType().GetProperties())
+                    {
+                        if (property.Name == "Id" || property.Name == "imageLink" || property.Name == "image" || property.Name == "imageLink" || property.Name == "Link")
+                        {
+                            continue;
+                        }
+                        result.Add(property.Name + ":  " + property.GetValue(selectedItem));
+                    }
+                    detailsForm.pbDetailImage.Image = selectedItem.image;
+                    detailsForm.linkLabel1.Text = selectedItem.Link;
+                    detailsForm.tbDetails.Text = string.Join(Environment.NewLine, result);
+                    detailsForm.Show();
+                }
             }
         }
 
         private void btSearch_Click(object sender, EventArgs e)
         {
-            var proces = new DataProces();
-
+            var Proces = new DataProces();
             switch (combDetailType.Text.ToString())
             {
-                case "Transistor":
+                case "Transistor":   
+                    var transistor = Proces.ReadDetails<Transistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\TransistorData.json");
+                    var sortedtrans = Proces.SortedTransistor(transistor, combTransistorType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text));
 
-                    var transistor = proces.ReadDetails<Transistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\TransistorData.json");
-                    var sortedtrans = proces.SortedTransistor(transistor, combTransistorType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text));
-
-                    proces.FormPicture(sortedtrans);
+                    Proces.FormPicture(sortedtrans);
 
                     dataGridView1.DataSource = sortedtrans;
                     DataGridColumHide();
@@ -64,10 +82,11 @@ namespace Handbook_of_amaters_try
                     break;
 
                 case "Capasitor":
-                    var capasitors = proces.ReadDetails<Capasitor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\CapasitorData.json");
-                    var sortedcapas = proces.SortedCapasitor(capasitors, combCapasitorType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(tbCapasity.Text), Convert.ToDouble(textBox3.Text));
 
-                    proces.FormPicture(sortedcapas);
+                    var capasitors = Proces.ReadDetails<Capasitor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\CapasitorData.json");
+                    var sortedcapas = Proces.SortedCapasitor(capasitors, combCapasitorType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(tbCapasity.Text), Convert.ToDouble(textBox3.Text));
+
+                    Proces.FormPicture(sortedcapas);
 
                     dataGridView1.DataSource = sortedcapas;
 
@@ -78,15 +97,18 @@ namespace Handbook_of_amaters_try
         }
         private void combDetailType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var Process = new DataProces();
             switch (combDetailType.Text.ToString())
             {
                 case "Transistor":
                     Hide();
                     TransistorView();
+                    currentDetailList = Process.ReadDetails<Transistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\TransistorData.json").Cast<dynamic>().ToList();
                     break;
                 case "Capacitor":
                     Hide();
                     CapasitorView();
+                    currentDetailList = Process.ReadDetails<Capasitor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\CapasitorData.json").Cast<dynamic>().ToList();
                     break;
             }
         }
@@ -117,7 +139,7 @@ namespace Handbook_of_amaters_try
 
         private void btAdmin_Click(object sender, EventArgs e)
         {
-            PasswordForm passform = new PasswordForm("123456");
+            PasswordForm passform = new PasswordForm("1",currentDetailList);
             passform.Show();
         }
 

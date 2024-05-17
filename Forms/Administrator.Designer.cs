@@ -29,13 +29,17 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            columUpdate = new DataGridViewButtonColumn();
+            columDelete = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(320, 2);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { columUpdate, columDelete });
+            dataGridView1.Dock = DockStyle.Right;
+            dataGridView1.Location = new Point(308, 0);
             dataGridView1.MaximumSize = new Size(768, 518);
             dataGridView1.MinimumSize = new Size(768, 518);
             dataGridView1.Name = "dataGridView1";
@@ -43,11 +47,25 @@
             dataGridView1.Size = new Size(768, 518);
             dataGridView1.TabIndex = 0;
             // 
+            // columUpdate
+            // 
+            columUpdate.HeaderText = "Update";
+            columUpdate.MinimumWidth = 6;
+            columUpdate.Name = "columUpdate";
+            columUpdate.Width = 125;
+            // 
+            // columDelete
+            // 
+            columDelete.HeaderText = "Delete";
+            columDelete.MinimumWidth = 6;
+            columDelete.Name = "columDelete";
+            columDelete.Width = 125;
+            // 
             // Administrator
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1083, 522);
+            ClientSize = new Size(1076, 517);
             Controls.Add(dataGridView1);
             Name = "Administrator";
             Text = "Administration window";
@@ -58,5 +76,7 @@
         #endregion
 
         public DataGridView dataGridView1;
+        private DataGridViewButtonColumn columUpdate;
+        private DataGridViewButtonColumn columDelete;
     }
 }
