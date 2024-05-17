@@ -90,7 +90,6 @@
         }
         public void DataGridColumHide()
         {
-            dataGridView1.Columns["Id"].Visible = false;
             dataGridView1.Columns["Name"].Visible = false;
             dataGridView1.Columns["Description"].Visible = false;
             dataGridView1.Columns["Link"].Visible = false;
@@ -113,6 +112,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             btSearch = new Button();
             dataGridView1 = new DataGridView();
             imgColum = new DataGridViewImageColumn();
@@ -390,6 +390,7 @@
             Controls.Add(lbMainDetailTypeSelect);
             Controls.Add(dataGridView1);
             Controls.Add(btSearch);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(1500, 700);
             MinimumSize = new Size(1500, 700);
             Name = "Form1";

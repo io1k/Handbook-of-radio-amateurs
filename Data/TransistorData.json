@@ -1,6 +1,5 @@
 [
   {
-    "Id": 1,
     "Name": "FQA24N50",
     "Price": 85,
     "Description": "Intended for use in secondary power supplies, regulators, stabilizers and converters, electric motor control circuits and other blocks and assemblies of electronic equipment.",
@@ -11,7 +10,6 @@
     "Current": 24
   },
   {
-    "Id": 2,
     "Name": "IRF1010EPBF MOSFET N-Channel",
     "Price": 152,
     "Description": "-",
@@ -22,7 +20,6 @@
     "Current": 88
   },
   {
-    "Id": 3,
     "Name": "MJ15024G",
     "Price": 379,
     "Description": "-",
@@ -33,7 +30,6 @@
     "Current": 16
   },
   {
-    "Id": 4,
     "Name": "КП903А",
     "Price": 66,
     "Description": "-",

@@ -35,7 +35,7 @@ namespace Handbook_of_amaters_try
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start(Convert.ToString(linkLabel1.Text));
+            Process.Start("chrome.exe", "--new-tab https://rozetka.com.ua/ua/414991737/p414991737/");
         }
     }
 }
