@@ -1,0 +1,57 @@
+[
+  {
+    "Type": "Field-effect",
+    "Voltage": 5,
+    "Current": 24,
+    "Name": "FQA24N50",
+    "Price": 85,
+    "Description": "Intended for use in secondary power supplies, regulators, stabilizers and converters, electric motor control circuits and other blocks and assemblies of electronic equipment.",
+    "Link": "https://rozetka.com.ua/ua/414990630/p414990630/",
+    "image": null,
+    "imageLink": "C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of amaters try\\Data\\src\\Transisots\\FQA24N50.jpg"
+  },
+  {
+    "Type": "Bipolar",
+    "Voltage": 68,
+    "Current": 88,
+    "Name": "IRF1010EPBF MOSFET N-Channel",
+    "Price": 152,
+    "Description": "-",
+    "Link": "https://rozetka.com.ua/ua/366773070/p366773070/",
+    "image": null,
+    "imageLink": "C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of amaters try\\Data\\src\\Transisots\\IRF1010EPBF MOSFET N-Channel.jpg"
+  },
+  {
+    "Type": "Bipolar",
+    "Voltage": 5,
+    "Current": 16,
+    "Name": "MJ15024G",
+    "Price": 379,
+    "Description": "-",
+    "Link": "https://rozetka.com.ua/ua/420678240/p420678240/",
+    "image": null,
+    "imageLink": "C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of amaters try\\Data\\src\\Transisots\\MJ15024G.jpg"
+  },
+  {
+    "Type": "Field-effect",
+    "Voltage": 20,
+    "Current": 0.7,
+    "Name": "\u041A\u041F903\u0410",
+    "Price": 66,
+    "Description": "-",
+    "Link": "https://rozetka.com.ua/ua/414991737/p414991737/",
+    "image": null,
+    "imageLink": "C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of amaters try\\Data\\src\\Transisots\\\u041A\u041F903\u0410.jpg"
+  },
+  {
+    "Type": "Bipolar",
+    "Voltage": 100,
+    "Current": 1.5,
+    "Name": "BD140",
+    "Price": 6,
+    "Description": "These epitaxial planar transistors are mounted in the SOT-32 plastic package. They are designed for audio amplifiers and drivers utilizing complementary or quasi-complementary circuits.",
+    "Link": "https://www.rcscomponents.kiev.ua/search?q=BD140",
+    "image": null,
+    "imageLink": "C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\src\\Transisots\\BD140-Transistors.jpg"
+  }
+]

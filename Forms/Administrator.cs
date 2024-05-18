@@ -28,6 +28,7 @@ namespace Handbook_of_amaters_try.Forms
             data = details;
             currentType = type;
             dataGridView1.DataSource = data;
+            SetCurrentDetailProperty();
         }
 
         private void Update(object sender, DataGridViewCellEventArgs e)
@@ -79,21 +80,55 @@ namespace Handbook_of_amaters_try.Forms
                 MessageBox.Show("Problem with removal, contact a specialist");
             }
         }
-        public void TakeCurrentData(List<Details> list)
+        private void Add()
         {
-
+            if (currentType == "Transistor")
+            {
+                data.Add(new Transistor() {
+                   Name = Convert.ToString(tbName.Text),
+                   Price= Convert.ToInt32(tbPrice.Text),
+                   Description = Convert.ToString(rtbDescription.Text),
+                   Link = Convert.ToString(tbLink.Text),
+                   imageLink = Convert.ToString(tbImageLink.Text),
+                   Type =Convert.ToString(combTransistorType.Text),
+                   Voltage =Convert.ToDouble(textBox2.Text),
+                   Current = Convert.ToDouble(textBox3.Text)
+                }) ;
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = data;
+            }
         }
         public void Save()
         {
             var options = new JsonSerializerOptions { WriteIndented = true };
             string jsonString = JsonSerializer.Serialize(data, options);
 
-            File.WriteAllText("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\SaveMethodTest.json", jsonString);
+            File.WriteAllText("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\TransistorData.json", jsonString);
         }
 
         private void btSave_Click(object sender, EventArgs e)
         {
             Save();
+        }
+
+        private void lbCurrent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbDescription_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            Add();
         }
     }
 

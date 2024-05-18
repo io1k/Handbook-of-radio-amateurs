@@ -8,7 +8,7 @@ using static Handbook_of_radio_amauter.Data.DataProces;
 namespace Handbook_of_radio_amateurs
 {
     public class Transistor: Detail
-    {
+    {   
         public string Type {  get; set; }
         public double Voltage { get; set; }
         public double Current {  get; set; }

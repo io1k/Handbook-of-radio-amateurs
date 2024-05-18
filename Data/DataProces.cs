@@ -54,27 +54,11 @@ namespace Handbook_of_radio_amauter.Data
 
             return resultList;
         }
-        public string TakeDataListType(string type)
-        {
-            if (type == "Transistor")
-            {
-                return "C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of amaters try\\Data\\TransistorData.json";
-            }
-            else if (type == "Capasitor")
-            {
-                return "C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of amaters try\\Data\\CapasitorData.json";
-            }
-            else
-            {
-                MessageBox.Show("Проблема з типом , зверніться до спеціаліста");
-            }
-            return string.Empty;
-        }
         public List<List<object>> AddAllLists()
         {
             List<List<object>> myList = new List<List<object>>();
-            myList.Add(ReadDetails<Transistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\TransistorData.json").Select(x => (object)x).ToList());
-            myList.Add(ReadDetails<Capasitor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\CapasitorData.json").Select(x => (object)x).ToList());
+            myList.Add(ReadDetails<Transistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\TransistorData.json").Select(x => (object)x).ToList());
+            myList.Add(ReadDetails<Capasitor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\CapasitorData.json").Select(x => (object)x).ToList());
             return myList;
         }
     }   
