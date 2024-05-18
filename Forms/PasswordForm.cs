@@ -13,17 +13,17 @@ using System.Windows.Forms;
 namespace Handbook_of_amaters_try.Forms
 {
     public partial class PasswordForm : Form
-    {
-        private Form1 form1;
+    { 
         private DataProces dataProces;
         private string password;
-        public Administrator admin ;
-        private List<dynamic> DetailList;
-        public PasswordForm(string pass,List<dynamic> list)
+        private List<object> DetailList;
+        private string currentType;
+        public PasswordForm(string pass,List<object> list, string type)
         {
             InitializeComponent();
             password = pass;
             DetailList = list;
+            currentType = type;
         }
 
         private void tbPassword_TextChanged(object sender, EventArgs e)
@@ -36,8 +36,7 @@ namespace Handbook_of_amaters_try.Forms
 
             if (password == tbPassword.Text)
             {
-                admin = new Administrator();
-                admin.dataGridView1.DataSource = DetailList;
+                var admin = new Administrator(currentType, DetailList);
                 admin.Show();
                 this.Close();
             }

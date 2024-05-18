@@ -15,12 +15,14 @@ namespace Handbook_of_amaters_try
 {
     public partial class Form1 : Form
     {
-        public List<dynamic> currentDetailList { get; set; }
+        public List<List<object>> currentDetailList;
         public Form1()
         {
+            var proces = new DataProces();
             InitializeComponent();
             Hide();
             SetIconSize();
+            currentDetailList = proces.AddAllLists();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -81,7 +83,7 @@ namespace Handbook_of_amaters_try
                     dataGridView1.Columns["btDetails"].DisplayIndex = dataGridView1.ColumnCount - 1;
                     break;
 
-                case "Capasitor":
+                case "Capacitor":
 
                     var capasitors = Proces.ReadDetails<Capasitor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\CapasitorData.json");
                     var sortedcapas = Proces.SortedCapasitor(capasitors, combCapasitorType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(tbCapasity.Text), Convert.ToDouble(textBox3.Text));
@@ -102,13 +104,11 @@ namespace Handbook_of_amaters_try
             {
                 case "Transistor":
                     Hide();
-                    TransistorView();
-                    currentDetailList = Process.ReadDetails<Transistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\TransistorData.json").Cast<dynamic>().ToList();
+                    TransistorView();   
                     break;
                 case "Capacitor":
                     Hide();
                     CapasitorView();
-                    currentDetailList = Process.ReadDetails<Capasitor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\CapasitorData.json").Cast<dynamic>().ToList();
                     break;
             }
         }
@@ -139,8 +139,23 @@ namespace Handbook_of_amaters_try
 
         private void btAdmin_Click(object sender, EventArgs e)
         {
-            PasswordForm passform = new PasswordForm("1",currentDetailList);
-            passform.Show();
+            var type = combDetailType.Text.ToString();
+            string password = "1";
+            if (string.IsNullOrEmpty(type))
+            {
+                MessageBox.Show("Please select detail type");
+            }
+            else if (type == "Transistor")
+            {
+                PasswordForm passform = new PasswordForm(password, currentDetailList[0],type);
+                passform.Show();
+            }
+            else if (type == "Capacitor")
+            {
+                PasswordForm passform = new PasswordForm(password, currentDetailList[1],type);
+                passform.Show();
+            }
+            
         }
 
         private void lbCapasitorType_Click(object sender, EventArgs e)

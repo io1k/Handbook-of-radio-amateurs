@@ -11,16 +11,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Linq.Expressions;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 namespace Handbook_of_amaters_try.Forms
 {
     public partial class Administrator : Form
     {
         private DataProces dataProces;
-        private List<dynamic> data;
-        public Administrator()
+        private List<object> data;
+        private string currentType;
+        public Administrator(string type, List<object> details)
         {
             InitializeComponent();
+            data = details;
+            currentType = type;
+            dataGridView1.DataSource = data;
         }
 
         private void Update(object sender, DataGridViewCellEventArgs e)
@@ -31,20 +38,64 @@ namespace Handbook_of_amaters_try.Forms
         {
             if (e.ColumnIndex == columDelete.Index)
             {
-                //DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
 
-                //dynamic selectedItem = selectedRow.DataBoundItem;
-                //data.Remove(selectedItem);
+                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+                var selectedItem = selectedRow.DataBoundItem;
+                Delete(selectedItem);
 
             }
             else
             {
-                
+                // Continue
             }
         }
-        private void Delete(List<dynamic> item)
+        private void Delete<T>(T item)
         {
-            
+            try
+            {
+                if (currentType == "Transistor")
+                {
+                    Transistor transistorItem = item as Transistor;
+                    if (transistorItem != null)
+                    {
+                        data.Remove(transistorItem);
+                        dataGridView1.DataSource = null;
+                        dataGridView1.DataSource = data;
+                    }
+                }
+                else if (currentType == "Capacitor")
+                {
+                    Capasitor capasitorItem = item as Capasitor;
+                    if (capasitorItem != null)
+                    {
+                        data.Remove(capasitorItem);
+                        dataGridView1.DataSource = null;
+                        dataGridView1.DataSource = data;
+                    }
+                }
+            }
+            catch (InvalidOperationException)
+            {
+                MessageBox.Show("Problem with removal, contact a specialist");
+            }
+        }
+        public void TakeCurrentData(List<Details> list)
+        {
+
+        }
+        public void Save()
+        {
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string jsonString = JsonSerializer.Serialize(data, options);
+
+            File.WriteAllText("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\SaveMethodTest.json", jsonString);
+        }
+
+        private void btSave_Click(object sender, EventArgs e)
+        {
+            Save();
         }
     }
+
+
 }

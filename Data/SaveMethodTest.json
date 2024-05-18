@@ -1,0 +1,24 @@
+[
+  {
+    "Type": "Field-effect",
+    "Voltage": 5,
+    "Current": 24,
+    "Name": "FQA24N50",
+    "Price": 85,
+    "Description": "Intended for use in secondary power supplies, regulators, stabilizers and converters, electric motor control circuits and other blocks and assemblies of electronic equipment.",
+    "Link": "https://rozetka.com.ua/ua/414990630/p414990630/",
+    "image": null,
+    "imageLink": "C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of amaters try\\Data\\src\\Transisots\\FQA24N50.jpg"
+  },
+  {
+    "Type": "Bipolar",
+    "Voltage": 68,
+    "Current": 88,
+    "Name": "IRF1010EPBF MOSFET N-Channel",
+    "Price": 152,
+    "Description": "-",
+    "Link": "https://rozetka.com.ua/ua/366773070/p366773070/",
+    "image": null,
+    "imageLink": "C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of amaters try\\Data\\src\\Transisots\\IRF1010EPBF MOSFET N-Channel.jpg"
+  }
+]

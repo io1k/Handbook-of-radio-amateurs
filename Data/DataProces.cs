@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Handbook_of_radio_amauter.Data
 {
-    internal class DataProces
+    class DataProces
     {
         public DataProces() { } 
-        public List<T> ReadDetails<T>(string filePath) 
+        public List<T> ReadDetails<T>(string filePath) where T : new()
         {
             string json = File.ReadAllText(filePath);
             return JsonSerializer.Deserialize<List<T>>(json);
@@ -70,6 +70,12 @@ namespace Handbook_of_radio_amauter.Data
             }
             return string.Empty;
         }
-
+        public List<List<object>> AddAllLists()
+        {
+            List<List<object>> myList = new List<List<object>>();
+            myList.Add(ReadDetails<Transistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\TransistorData.json").Select(x => (object)x).ToList());
+            myList.Add(ReadDetails<Capasitor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\CapasitorData.json").Select(x => (object)x).ToList());
+            return myList;
+        }
     }   
 }   
