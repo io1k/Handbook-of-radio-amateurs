@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Details));
             pbDetailImage = new PictureBox();
             tbDetails = new TextBox();
             linkLabel1 = new LinkLabel();
@@ -37,58 +38,43 @@
             // 
             // pbDetailImage
             // 
-            pbDetailImage.Location = new Point(12, 22);
+            resources.ApplyResources(pbDetailImage, "pbDetailImage");
             pbDetailImage.Name = "pbDetailImage";
-            pbDetailImage.Size = new Size(278, 256);
-            pbDetailImage.TabIndex = 0;
             pbDetailImage.TabStop = false;
             // 
             // tbDetails
             // 
             tbDetails.BackColor = SystemColors.MenuBar;
             tbDetails.BorderStyle = BorderStyle.None;
-            tbDetails.Font = new Font("Franklin Gothic Book", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            tbDetails.Location = new Point(448, 22);
-            tbDetails.Multiline = true;
+            resources.ApplyResources(tbDetails, "tbDetails");
             tbDetails.Name = "tbDetails";
-            tbDetails.Size = new Size(325, 390);
-            tbDetails.TabIndex = 1;
             tbDetails.TextChanged += tbDetails_TextChanged;
             // 
             // linkLabel1
             // 
-            linkLabel1.AutoSize = true;
+            resources.ApplyResources(linkLabel1, "linkLabel1");
             linkLabel1.LinkColor = Color.Black;
-            linkLabel1.Location = new Point(12, 351);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(15, 20);
-            linkLabel1.TabIndex = 2;
             linkLabel1.TabStop = true;
-            linkLabel1.Text = "\\";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // label1
             // 
-            label1.AutoSize = true;
+            resources.ApplyResources(label1, "label1");
             label1.ForeColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(11, 329);
             label1.Name = "label1";
-            label1.Size = new Size(120, 20);
-            label1.TabIndex = 3;
-            label1.Text = "Link to purchase ";
+            label1.Click += label1_Click;
             // 
             // Details
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
             Controls.Add(label1);
             Controls.Add(linkLabel1);
             Controls.Add(tbDetails);
             Controls.Add(pbDetailImage);
             ForeColor = SystemColors.ButtonFace;
             Name = "Details";
-            Text = "Details";
             Load += Details_Load;
             ((System.ComponentModel.ISupportInitialize)pbDetailImage).EndInit();
             ResumeLayout(false);

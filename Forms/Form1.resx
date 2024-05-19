@@ -117,31 +117,552 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 584</value>
+  </data>
+  <data name="btSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 29</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btSearch.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="&gt;&gt;btSearch.Name" xml:space="preserve">
+    <value>btSearch</value>
+  </data>
+  <data name="&gt;&gt;btSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btSearch.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btSearch.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
   <metadata name="imgColum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="imgColum.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgColum.MinimumWidth" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="imgColum.Width" type="System.Int32, mscorlib">
+    <value>200</value>
+  </data>
   <metadata name="typeColum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="typeColum.HeaderText" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="typeColum.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="typeColum.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <metadata name="voltageColum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="voltageColum.HeaderText" xml:space="preserve">
+    <value>Voltage</value>
+  </data>
+  <data name="voltageColum.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="voltageColum.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <metadata name="currentColum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="currentColum.HeaderText" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="currentColum.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="currentColum.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <metadata name="capasityColum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="capasityColum.HeaderText" xml:space="preserve">
+    <value>Capasity</value>
+  </data>
+  <data name="capasityColum.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="capasityColum.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <metadata name="allowebleTempColum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="allowebleTempColum.HeaderText" xml:space="preserve">
+    <value>Available temperature</value>
+  </data>
+  <data name="allowebleTempColum.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="allowebleTempColum.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <metadata name="priceColum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="priceColum.HeaderText" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="priceColum.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="priceColum.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <metadata name="btDetails.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btDetails.HeaderText" xml:space="preserve">
+    <value>More detail</value>
+  </data>
+  <data name="btDetails.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btDetails.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, -2</value>
+  </data>
+  <data name="dataGridView1.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1154, 655</value>
+  </data>
+  <data name="dataGridView1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1154, 655</value>
+  </data>
+  <data name="dataGridView1.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1154, 655</value>
+  </data>
+  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="lbMainDetailTypeSelect.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbMainDetailTypeSelect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="lbMainDetailTypeSelect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 20</value>
+  </data>
+  <data name="lbMainDetailTypeSelect.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lbMainDetailTypeSelect.Text" xml:space="preserve">
+    <value>Select detail type</value>
+  </data>
+  <data name="&gt;&gt;lbMainDetailTypeSelect.Name" xml:space="preserve">
+    <value>lbMainDetailTypeSelect</value>
+  </data>
+  <data name="&gt;&gt;lbMainDetailTypeSelect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbMainDetailTypeSelect.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbMainDetailTypeSelect.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="combDetailType.Items" xml:space="preserve">
+    <value>Transistor</value>
+  </data>
+  <data name="combDetailType.Items1" xml:space="preserve">
+    <value>Capacitor</value>
+  </data>
+  <data name="combDetailType.Items2" xml:space="preserve">
+    <value>Resistor</value>
+  </data>
+  <data name="combDetailType.Items3" xml:space="preserve">
+    <value>Diode</value>
+  </data>
+  <data name="combDetailType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 75</value>
+  </data>
+  <data name="combDetailType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 28</value>
+  </data>
+  <data name="combDetailType.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;combDetailType.Name" xml:space="preserve">
+    <value>combDetailType</value>
+  </data>
+  <data name="&gt;&gt;combDetailType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;combDetailType.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;combDetailType.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 241</value>
+  </data>
+  <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 27</value>
+  </data>
+  <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="textBox2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox2.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
+    <value>textBox2</value>
+  </data>
+  <data name="&gt;&gt;textBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 335</value>
+  </data>
+  <data name="textBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 27</value>
+  </data>
+  <data name="textBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="textBox3.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;textBox3.Name" xml:space="preserve">
+    <value>textBox3</value>
+  </data>
+  <data name="&gt;&gt;textBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBox3.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="combTransistorType.Items" xml:space="preserve">
+    <value>Field-effect</value>
+  </data>
+  <data name="combTransistorType.Items1" xml:space="preserve">
+    <value>Bipolar</value>
+  </data>
+  <data name="combTransistorType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 167</value>
+  </data>
+  <data name="combTransistorType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 28</value>
+  </data>
+  <data name="combTransistorType.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="combTransistorType.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;combTransistorType.Name" xml:space="preserve">
+    <value>combTransistorType</value>
+  </data>
+  <data name="&gt;&gt;combTransistorType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;combTransistorType.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;combTransistorType.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lbTransistorType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbTransistorType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 133</value>
+  </data>
+  <data name="lbTransistorType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 20</value>
+  </data>
+  <data name="lbTransistorType.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lbTransistorType.Text" xml:space="preserve">
+    <value>Select transistor type</value>
+  </data>
+  <data name="lbTransistorType.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lbTransistorType.Name" xml:space="preserve">
+    <value>lbTransistorType</value>
+  </data>
+  <data name="&gt;&gt;lbTransistorType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbTransistorType.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbTransistorType.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lbVoltage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbVoltage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 208</value>
+  </data>
+  <data name="lbVoltage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 20</value>
+  </data>
+  <data name="lbVoltage.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lbVoltage.Text" xml:space="preserve">
+    <value>Voltage</value>
+  </data>
+  <data name="lbVoltage.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lbVoltage.Name" xml:space="preserve">
+    <value>lbVoltage</value>
+  </data>
+  <data name="&gt;&gt;lbVoltage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbVoltage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbVoltage.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lbCurrent.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbCurrent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 288</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lbCurrent.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="lbCurrent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 20</value>
+  </data>
+  <data name="lbCurrent.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lbCurrent.Text" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="lbCurrent.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lbCurrent.Name" xml:space="preserve">
+    <value>lbCurrent</value>
+  </data>
+  <data name="&gt;&gt;lbCurrent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbCurrent.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbCurrent.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lbCapasitorType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbCapasitorType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 133</value>
+  </data>
+  <data name="lbCapasitorType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 20</value>
+  </data>
+  <data name="lbCapasitorType.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lbCapasitorType.Text" xml:space="preserve">
+    <value>Select capacitor type</value>
+  </data>
+  <data name="&gt;&gt;lbCapasitorType.Name" xml:space="preserve">
+    <value>lbCapasitorType</value>
+  </data>
+  <data name="&gt;&gt;lbCapasitorType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbCapasitorType.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbCapasitorType.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="combCapasitorType.Items" xml:space="preserve">
+    <value>Low voltage</value>
+  </data>
+  <data name="combCapasitorType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 167</value>
+  </data>
+  <data name="combCapasitorType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 28</value>
+  </data>
+  <data name="combCapasitorType.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;combCapasitorType.Name" xml:space="preserve">
+    <value>combCapasitorType</value>
+  </data>
+  <data name="&gt;&gt;combCapasitorType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;combCapasitorType.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;combCapasitorType.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lbAllowableTemp.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbAllowableTemp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 288</value>
+  </data>
+  <data name="lbAllowableTemp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 20</value>
+  </data>
+  <data name="lbAllowableTemp.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lbAllowableTemp.Text" xml:space="preserve">
+    <value>Available temperature </value>
+  </data>
+  <data name="&gt;&gt;lbAllowableTemp.Name" xml:space="preserve">
+    <value>lbAllowableTemp</value>
+  </data>
+  <data name="&gt;&gt;lbAllowableTemp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbAllowableTemp.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbAllowableTemp.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lbCapasity.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbCapasity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 381</value>
+  </data>
+  <data name="lbCapasity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 20</value>
+  </data>
+  <data name="lbCapasity.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lbCapasity.Text" xml:space="preserve">
+    <value>Capasity</value>
+  </data>
+  <data name="&gt;&gt;lbCapasity.Name" xml:space="preserve">
+    <value>lbCapasity</value>
+  </data>
+  <data name="&gt;&gt;lbCapasity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbCapasity.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbCapasity.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tbCapasity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 414</value>
+  </data>
+  <data name="tbCapasity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 27</value>
+  </data>
+  <data name="tbCapasity.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;tbCapasity.Name" xml:space="preserve">
+    <value>tbCapasity</value>
+  </data>
+  <data name="&gt;&gt;tbCapasity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbCapasity.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbCapasity.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btAdmin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>275, 605</value>
+  </data>
+  <data name="btAdmin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 48</value>
+  </data>
+  <data name="btAdmin.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;btAdmin.Name" xml:space="preserve">
+    <value>btAdmin</value>
+  </data>
+  <data name="&gt;&gt;btAdmin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btAdmin.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btAdmin.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>en</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 20</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1482, 653</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEA4eEAAAEACACs6AAAFgAAACgAAADhAAAAwgEAAAEACAAAAAAAZMgAAAAAAAAAAAAAAAEAAAAB
@@ -1139,5 +1660,68 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAA
 </value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1500, 700</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1500, 700</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Handbook of radio amateurs</value>
+  </data>
+  <data name="&gt;&gt;imgColum.Name" xml:space="preserve">
+    <value>imgColum</value>
+  </data>
+  <data name="&gt;&gt;imgColum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;typeColum.Name" xml:space="preserve">
+    <value>typeColum</value>
+  </data>
+  <data name="&gt;&gt;typeColum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;voltageColum.Name" xml:space="preserve">
+    <value>voltageColum</value>
+  </data>
+  <data name="&gt;&gt;voltageColum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;currentColum.Name" xml:space="preserve">
+    <value>currentColum</value>
+  </data>
+  <data name="&gt;&gt;currentColum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;capasityColum.Name" xml:space="preserve">
+    <value>capasityColum</value>
+  </data>
+  <data name="&gt;&gt;capasityColum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;allowebleTempColum.Name" xml:space="preserve">
+    <value>allowebleTempColum</value>
+  </data>
+  <data name="&gt;&gt;allowebleTempColum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;priceColum.Name" xml:space="preserve">
+    <value>priceColum</value>
+  </data>
+  <data name="&gt;&gt;priceColum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btDetails.Name" xml:space="preserve">
+    <value>btDetails</value>
+  </data>
+  <data name="&gt;&gt;btDetails.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

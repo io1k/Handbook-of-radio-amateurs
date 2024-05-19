@@ -39,15 +39,26 @@ namespace Handbook_of_amaters_try.Forms
         {
             if (e.ColumnIndex == columDelete.Index)
             {
-
                 DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
                 var selectedItem = selectedRow.DataBoundItem;
-                Delete(selectedItem);
 
-            }
-            else
-            {
-                // Continue
+                DialogResult result = MessageBox.Show(
+                   "Are you sure? You want delete this?",
+                   "Attention",
+                   MessageBoxButtons.YesNo,
+                   MessageBoxIcon.Question
+                   );
+
+                if (result == DialogResult.Yes)
+                {
+                    Delete(selectedItem);
+                }
+                else
+                {
+                    return;
+                }
+
+
             }
         }
         private void Delete<T>(T item)
@@ -84,15 +95,33 @@ namespace Handbook_of_amaters_try.Forms
         {
             if (currentType == "Transistor")
             {
-                data.Add(new Transistor() {
-                   Name = Convert.ToString(tbName.Text),
-                   Price= Convert.ToInt32(tbPrice.Text),
-                   Description = Convert.ToString(rtbDescription.Text),
-                   Link = Convert.ToString(tbLink.Text),
-                   imageLink = Convert.ToString(tbImageLink.Text),
-                   Type =Convert.ToString(combTransistorType.Text),
-                   Voltage =Convert.ToDouble(textBox2.Text),
-                   Current = Convert.ToDouble(textBox3.Text)
+                data.Add(new Transistor()
+                {
+                    Name = Convert.ToString(tbName.Text),
+                    Price = Convert.ToInt32(tbPrice.Text),
+                    Description = Convert.ToString(rtbDescription.Text),
+                    Link = Convert.ToString(tbLink.Text),
+                    imageLink = Convert.ToString(tbImageLink.Text),
+                    Type = Convert.ToString(combTransistorType.Text),
+                    Voltage = Convert.ToDouble(textBox2.Text),
+                    Current = Convert.ToDouble(textBox3.Text)
+                });
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = data;
+            }
+            else if (currentType == "Capacitor")
+            {
+                data.Add(new Capasitor()
+                {
+                    Name = Convert.ToString(tbName.Text),
+                    Price = Convert.ToInt32(tbPrice.Text),
+                    Description = Convert.ToString(rtbDescription.Text),
+                    Link = Convert.ToString(tbLink.Text),
+                    imageLink = Convert.ToString(tbImageLink.Text),
+                    Type = Convert.ToString(combCapasitorType.Text),
+                    Voltage = Convert.ToDouble(textBox2.Text),
+                    Capasity = Convert.ToInt32(tbCapasity.Text),
+                    AllowableTemperature = Convert.ToInt32(textBox3.Text)
                 }) ;
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = data;
@@ -102,8 +131,15 @@ namespace Handbook_of_amaters_try.Forms
         {
             var options = new JsonSerializerOptions { WriteIndented = true };
             string jsonString = JsonSerializer.Serialize(data, options);
-
-            File.WriteAllText("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\TransistorData.json", jsonString);
+            if (currentType == "Transistor")
+            {
+                File.WriteAllText("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\TransistorData.json", jsonString);
+            }
+            else if (currentType == "Capacitor")
+            {
+                File.WriteAllText("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\CapasitorData.json", jsonString);
+            }
+            
         }
 
         private void btSave_Click(object sender, EventArgs e)
@@ -130,6 +166,26 @@ namespace Handbook_of_amaters_try.Forms
         {
             Add();
         }
+
+        private void Administrator_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                 "Your changes will not be saved, do you want to save them?",
+                 "Attention",
+                 MessageBoxButtons.YesNoCancel,
+                 MessageBoxIcon.Question
+                 );
+
+            if (result == DialogResult.Yes)
+            {
+                Save();
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+        }
+        
     }
 
 

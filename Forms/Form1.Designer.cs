@@ -142,11 +142,8 @@
             // 
             // btSearch
             // 
-            btSearch.Location = new Point(45, 584);
+            resources.ApplyResources(btSearch, "btSearch");
             btSearch.Name = "btSearch";
-            btSearch.Size = new Size(94, 29);
-            btSearch.TabIndex = 0;
-            btSearch.Text = "Search";
             btSearch.UseVisualStyleBackColor = true;
             btSearch.Click += btSearch_Click;
             // 
@@ -158,222 +155,150 @@
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { imgColum, typeColum, voltageColum, currentColum, capasityColum, allowebleTempColum, priceColum, btDetails });
             dataGridView1.EditMode = DataGridViewEditMode.EditOnF2;
             dataGridView1.GridColor = SystemColors.MenuText;
-            dataGridView1.Location = new Point(329, -2);
-            dataGridView1.MaximumSize = new Size(1154, 655);
-            dataGridView1.MinimumSize = new Size(1154, 655);
+            resources.ApplyResources(dataGridView1, "dataGridView1");
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1154, 655);
-            dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // imgColum
             // 
             imgColum.DataPropertyName = "image";
-            imgColum.HeaderText = "";
-            imgColum.MinimumWidth = 125;
+            resources.ApplyResources(imgColum, "imgColum");
             imgColum.Name = "imgColum";
-            imgColum.Width = 200;
             // 
             // typeColum
             // 
             typeColum.DataPropertyName = "Type";
-            typeColum.HeaderText = "Type";
-            typeColum.MinimumWidth = 6;
+            resources.ApplyResources(typeColum, "typeColum");
             typeColum.Name = "typeColum";
-            typeColum.Width = 125;
             // 
             // voltageColum
             // 
             voltageColum.DataPropertyName = "Voltage";
-            voltageColum.HeaderText = "Voltage";
-            voltageColum.MinimumWidth = 6;
+            resources.ApplyResources(voltageColum, "voltageColum");
             voltageColum.Name = "voltageColum";
-            voltageColum.Width = 125;
             // 
             // currentColum
             // 
             currentColum.DataPropertyName = "Current";
-            currentColum.HeaderText = "Current";
-            currentColum.MinimumWidth = 6;
+            resources.ApplyResources(currentColum, "currentColum");
             currentColum.Name = "currentColum";
-            currentColum.Width = 125;
             // 
             // capasityColum
             // 
             capasityColum.DataPropertyName = "Capasity";
-            capasityColum.HeaderText = "Capasity";
-            capasityColum.MinimumWidth = 6;
+            resources.ApplyResources(capasityColum, "capasityColum");
             capasityColum.Name = "capasityColum";
-            capasityColum.Width = 125;
             // 
             // allowebleTempColum
             // 
             allowebleTempColum.DataPropertyName = "AllowableTemperature";
-            allowebleTempColum.HeaderText = "Available temperature";
-            allowebleTempColum.MinimumWidth = 6;
+            resources.ApplyResources(allowebleTempColum, "allowebleTempColum");
             allowebleTempColum.Name = "allowebleTempColum";
-            allowebleTempColum.Width = 125;
             // 
             // priceColum
             // 
             priceColum.DataPropertyName = "Price";
-            priceColum.HeaderText = "Price";
-            priceColum.MinimumWidth = 6;
+            resources.ApplyResources(priceColum, "priceColum");
             priceColum.Name = "priceColum";
-            priceColum.Width = 125;
             // 
             // btDetails
             // 
-            btDetails.HeaderText = "More detail";
-            btDetails.MinimumWidth = 6;
+            resources.ApplyResources(btDetails, "btDetails");
             btDetails.Name = "btDetails";
-            btDetails.Width = 125;
             // 
             // lbMainDetailTypeSelect
             // 
-            lbMainDetailTypeSelect.AutoSize = true;
-            lbMainDetailTypeSelect.Location = new Point(45, 41);
+            resources.ApplyResources(lbMainDetailTypeSelect, "lbMainDetailTypeSelect");
             lbMainDetailTypeSelect.Name = "lbMainDetailTypeSelect";
-            lbMainDetailTypeSelect.Size = new Size(124, 20);
-            lbMainDetailTypeSelect.TabIndex = 2;
-            lbMainDetailTypeSelect.Text = "Select detail type";
             // 
             // combDetailType
             // 
             combDetailType.FormattingEnabled = true;
-            combDetailType.Items.AddRange(new object[] { "Transistor", "Capacitor", "Resistor", "Diode" });
-            combDetailType.Location = new Point(45, 75);
+            combDetailType.Items.AddRange(new object[] { resources.GetString("combDetailType.Items"), resources.GetString("combDetailType.Items1"), resources.GetString("combDetailType.Items2"), resources.GetString("combDetailType.Items3") });
+            resources.ApplyResources(combDetailType, "combDetailType");
             combDetailType.Name = "combDetailType";
-            combDetailType.Size = new Size(151, 28);
-            combDetailType.TabIndex = 3;
             combDetailType.SelectedIndexChanged += combDetailType_SelectedIndexChanged;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(45, 241);
+            resources.ApplyResources(textBox2, "textBox2");
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 5;
-            textBox2.Visible = false;
-            textBox2.WordWrap = false;
             textBox2.TextChanged += TextChanged;
             textBox2.KeyPress += KeyPress;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(45, 335);
+            resources.ApplyResources(textBox3, "textBox3");
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 6;
-            textBox3.Visible = false;
             textBox3.TextChanged += TextChanged;
             textBox3.KeyPress += KeyPress;
             // 
             // combTransistorType
             // 
             combTransistorType.FormattingEnabled = true;
-            combTransistorType.Items.AddRange(new object[] { "Field-effect", "Bipolar" });
-            combTransistorType.Location = new Point(45, 167);
+            combTransistorType.Items.AddRange(new object[] { resources.GetString("combTransistorType.Items"), resources.GetString("combTransistorType.Items1") });
+            resources.ApplyResources(combTransistorType, "combTransistorType");
             combTransistorType.Name = "combTransistorType";
-            combTransistorType.Size = new Size(151, 28);
-            combTransistorType.TabIndex = 7;
-            combTransistorType.Visible = false;
             // 
             // lbTransistorType
             // 
-            lbTransistorType.AutoSize = true;
-            lbTransistorType.Location = new Point(45, 133);
+            resources.ApplyResources(lbTransistorType, "lbTransistorType");
             lbTransistorType.Name = "lbTransistorType";
-            lbTransistorType.Size = new Size(147, 20);
-            lbTransistorType.TabIndex = 8;
-            lbTransistorType.Text = "Select transistor type";
             lbTransistorType.UseWaitCursor = true;
-            lbTransistorType.Visible = false;
             // 
             // lbVoltage
             // 
-            lbVoltage.AutoSize = true;
-            lbVoltage.Location = new Point(45, 208);
+            resources.ApplyResources(lbVoltage, "lbVoltage");
             lbVoltage.Name = "lbVoltage";
-            lbVoltage.Size = new Size(60, 20);
-            lbVoltage.TabIndex = 9;
-            lbVoltage.Text = "Voltage";
-            lbVoltage.Visible = false;
             // 
             // lbCurrent
             // 
-            lbCurrent.AutoSize = true;
-            lbCurrent.Location = new Point(45, 288);
+            resources.ApplyResources(lbCurrent, "lbCurrent");
             lbCurrent.Name = "lbCurrent";
-            lbCurrent.RightToLeft = RightToLeft.No;
-            lbCurrent.Size = new Size(57, 20);
-            lbCurrent.TabIndex = 10;
-            lbCurrent.Text = "Current";
-            lbCurrent.Visible = false;
             lbCurrent.Click += label2_Click;
             // 
             // lbCapasitorType
             // 
-            lbCapasitorType.AutoSize = true;
-            lbCapasitorType.Location = new Point(45, 133);
+            resources.ApplyResources(lbCapasitorType, "lbCapasitorType");
             lbCapasitorType.Name = "lbCapasitorType";
-            lbCapasitorType.Size = new Size(148, 20);
-            lbCapasitorType.TabIndex = 11;
-            lbCapasitorType.Text = "Select capacitor type";
             lbCapasitorType.Click += lbCapasitorType_Click;
             // 
             // combCapasitorType
             // 
             combCapasitorType.FormattingEnabled = true;
-            combCapasitorType.Items.AddRange(new object[] { "Low voltage" });
-            combCapasitorType.Location = new Point(45, 167);
+            combCapasitorType.Items.AddRange(new object[] { resources.GetString("combCapasitorType.Items") });
+            resources.ApplyResources(combCapasitorType, "combCapasitorType");
             combCapasitorType.Name = "combCapasitorType";
-            combCapasitorType.Size = new Size(151, 28);
-            combCapasitorType.TabIndex = 12;
             // 
             // lbAllowableTemp
             // 
-            lbAllowableTemp.AutoSize = true;
-            lbAllowableTemp.Location = new Point(45, 288);
+            resources.ApplyResources(lbAllowableTemp, "lbAllowableTemp");
             lbAllowableTemp.Name = "lbAllowableTemp";
-            lbAllowableTemp.Size = new Size(161, 20);
-            lbAllowableTemp.TabIndex = 13;
-            lbAllowableTemp.Text = "Available temperature ";
             // 
             // lbCapasity
             // 
-            lbCapasity.AutoSize = true;
-            lbCapasity.Location = new Point(45, 381);
+            resources.ApplyResources(lbCapasity, "lbCapasity");
             lbCapasity.Name = "lbCapasity";
-            lbCapasity.Size = new Size(65, 20);
-            lbCapasity.TabIndex = 14;
-            lbCapasity.Text = "Capasity";
             // 
             // tbCapasity
             // 
-            tbCapasity.Location = new Point(44, 414);
+            resources.ApplyResources(tbCapasity, "tbCapasity");
             tbCapasity.Name = "tbCapasity";
-            tbCapasity.Size = new Size(125, 27);
-            tbCapasity.TabIndex = 15;
             tbCapasity.TextChanged += TextChanged;
             tbCapasity.KeyPress += KeyPress;
             // 
             // btAdmin
             // 
             btAdmin.Image = Handbook_of_radio_amateurs.Properties.Resources.input_onlinebitmaptools;
-            btAdmin.Location = new Point(275, 605);
+            resources.ApplyResources(btAdmin, "btAdmin");
             btAdmin.Name = "btAdmin";
-            btAdmin.Size = new Size(48, 48);
-            btAdmin.TabIndex = 16;
             btAdmin.UseVisualStyleBackColor = true;
             btAdmin.Click += btAdmin_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1482, 653);
             Controls.Add(btAdmin);
             Controls.Add(tbCapasity);
             Controls.Add(lbCapasity);
@@ -390,11 +315,7 @@
             Controls.Add(lbMainDetailTypeSelect);
             Controls.Add(dataGridView1);
             Controls.Add(btSearch);
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximumSize = new Size(1500, 700);
-            MinimumSize = new Size(1500, 700);
             Name = "Form1";
-            Text = "Handbook of radio amateurs";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
