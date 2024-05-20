@@ -28,27 +28,27 @@ namespace Handbook_of_radio_amauter.Data
                 }
             }
         }
-        public List<Transistor> SortedTransistor(List<Transistor> list, string type, double voltage, double current)
+        public List<Transistor> SortedTransistor(List<Transistor> list, string model, string type, double voltage, double current)
         {
             List<Transistor> resultList = new List<Transistor>(list);
 
             resultList.Sort((a, b) =>
             {
-                double scoreA = a.CalculateDeference(a, type, voltage, current);
-                double scoreB = b.CalculateDeference(b, type, voltage, current);
+                double scoreA = a.CalculateDeference(a,model, type, voltage, current);
+                double scoreB = b.CalculateDeference(b,model, type, voltage, current);
                 return scoreB.CompareTo(scoreA);
             });
 
             return resultList;
         }
-        public List<Capasitor> SortedCapasitor(List<Capasitor> list, string type, double voltage, double capasity,double allovebletemp)
+        public List<Capasitor> SortedCapasitor(List<Capasitor> list,string model, string type, double voltage, double capasity,double allovebletemp)
         {
             List<Capasitor> resultList = new List<Capasitor>(list);
 
             resultList.Sort((a, b) =>
             {
-                double scoreA = a.CalculateDeference(a, type, allovebletemp, capasity, voltage);
-                double scoreB = b.CalculateDeference(b, type, allovebletemp, capasity, voltage);
+                double scoreA = a.CalculateDeference(a, model,type, allovebletemp, capasity, voltage);
+                double scoreB = b.CalculateDeference(b, model, type, allovebletemp, capasity, voltage);
                 return scoreB.CompareTo(scoreA);
             });
 

@@ -72,9 +72,9 @@ namespace Handbook_of_amaters_try
             var Proces = new DataProces();
             switch (combDetailType.Text.ToString())
             {
-                case "Transistor":   
+                case "Transistor":
                     var transistor = Proces.ReadDetails<Transistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\TransistorData.json");
-                    var sortedtrans = Proces.SortedTransistor(transistor, combTransistorType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text));
+                    var sortedtrans = Proces.SortedTransistor(transistor,tbModel.Text.ToString(), combTransistorType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text));
 
                     Proces.FormPicture(sortedtrans);
 
@@ -86,7 +86,7 @@ namespace Handbook_of_amaters_try
                 case "Capacitor":
 
                     var capasitors = Proces.ReadDetails<Capasitor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\CapasitorData.json");
-                    var sortedcapas = Proces.SortedCapasitor(capasitors, combCapasitorType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(tbCapasity.Text), Convert.ToDouble(textBox3.Text));
+                    var sortedcapas = Proces.SortedCapasitor(capasitors, tbModel.Text.ToString(), combCapasitorType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(tbCapasity.Text), Convert.ToDouble(textBox3.Text));
 
                     Proces.FormPicture(sortedcapas);
 
@@ -104,7 +104,7 @@ namespace Handbook_of_amaters_try
             {
                 case "Transistor":
                     Hide();
-                    TransistorView();   
+                    TransistorView();
                     break;
                 case "Capacitor":
                     Hide();
@@ -147,15 +147,15 @@ namespace Handbook_of_amaters_try
             }
             else if (type == "Transistor")
             {
-                PasswordForm passform = new PasswordForm(password, currentDetailList[0],type);
+                PasswordForm passform = new PasswordForm(password, currentDetailList[0], type);
                 passform.Show();
             }
             else if (type == "Capacitor")
             {
-                PasswordForm passform = new PasswordForm(password, currentDetailList[1],type);
+                PasswordForm passform = new PasswordForm(password, currentDetailList[1], type);
                 passform.Show();
             }
-            
+
         }
 
         private void lbCapasitorType_Click(object sender, EventArgs e)

@@ -13,7 +13,7 @@ namespace Handbook_of_radio_amateurs
 
     public abstract class Detail
     {
-        public string Name { get; set; }
+        public string Model { get; set; }
         public int Price { get; set; }
         public string Description { get; set; }
         public string Link { get; set; }

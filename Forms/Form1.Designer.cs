@@ -32,16 +32,17 @@
             typeColum.Visible = false;
             voltageColum.Visible = false;
             currentColum.Visible = false;
-            priceColum.Visible = false ;
+            priceColum.Visible = false;
             capasityColum.Visible = false;
             allowebleTempColum.Visible = false;
-            lbCapasitorType.Visible = false;
-            lbCapasitorType.Visible = false;
+            lbCapacitorType.Visible = false;
             lbCapasity.Visible = false;
             tbCapasity.Visible = false;
             combCapasitorType.Visible = false;
             lbAllowableTemp.Visible = false;
             btDetails.Visible = false;
+            //lbModel.Visible = false;
+            //tbModel.Visible = false;
 
         }
         public void TransistorView()
@@ -62,6 +63,8 @@
             priceColum.Visible = true;
             dataGridView1.RowTemplate.Height = 200;
             btDetails.Visible = true;
+            lbModel.Visible = true;
+            tbModel.Visible = true;
         }
 
         public void CapasitorView()
@@ -69,9 +72,8 @@
             btSearch.Visible = true;
             textBox2.Visible = true;
             textBox3.Visible = true;
-            lbCapasitorType.Visible = true;
+            lbCapacitorType.Visible = true;
             lbVoltage.Visible = true;
-            lbCapasitorType.Visible = true;
             lbCapasity.Visible = true;
             tbCapasity.Visible = true;
             combCapasitorType.Visible = true;
@@ -87,10 +89,11 @@
             capasityColum.Visible = true;
             priceColum.Visible = true;
             btDetails.Visible = true;
+            lbModel.Visible = true;
+            tbModel.Visible = true;
         }
         public void DataGridColumHide()
         {
-            dataGridView1.Columns["Name"].Visible = false;
             dataGridView1.Columns["Description"].Visible = false;
             dataGridView1.Columns["Link"].Visible = false;
             dataGridView1.Columns["imageLink"].Visible = false;
@@ -115,6 +118,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             btSearch = new Button();
             dataGridView1 = new DataGridView();
+            lbMainDetailTypeSelect = new Label();
+            combDetailType = new ComboBox();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
+            combTransistorType = new ComboBox();
+            lbCurrent = new Label();
+            combCapasitorType = new ComboBox();
+            lbAllowableTemp = new Label();
+            lbCapasity = new Label();
+            tbCapasity = new TextBox();
+            btAdmin = new Button();
+            lbVoltage = new Label();
+            lbTransistorType = new Label();
+            lbCapacitorType = new Label();
+            lbModel = new Label();
+            tbModel = new TextBox();
             imgColum = new DataGridViewImageColumn();
             typeColum = new DataGridViewTextBoxColumn();
             voltageColum = new DataGridViewTextBoxColumn();
@@ -123,20 +142,6 @@
             allowebleTempColum = new DataGridViewTextBoxColumn();
             priceColum = new DataGridViewTextBoxColumn();
             btDetails = new DataGridViewButtonColumn();
-            lbMainDetailTypeSelect = new Label();
-            combDetailType = new ComboBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            combTransistorType = new ComboBox();
-            lbTransistorType = new Label();
-            lbVoltage = new Label();
-            lbCurrent = new Label();
-            lbCapasitorType = new Label();
-            combCapasitorType = new ComboBox();
-            lbAllowableTemp = new Label();
-            lbCapasity = new Label();
-            tbCapasity = new TextBox();
-            btAdmin = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -149,15 +154,112 @@
             // 
             // dataGridView1
             // 
+            resources.ApplyResources(dataGridView1, "dataGridView1");
             dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { imgColum, typeColum, voltageColum, currentColum, capasityColum, allowebleTempColum, priceColum, btDetails });
             dataGridView1.EditMode = DataGridViewEditMode.EditOnF2;
             dataGridView1.GridColor = SystemColors.MenuText;
-            resources.ApplyResources(dataGridView1, "dataGridView1");
             dataGridView1.Name = "dataGridView1";
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // lbMainDetailTypeSelect
+            // 
+            resources.ApplyResources(lbMainDetailTypeSelect, "lbMainDetailTypeSelect");
+            lbMainDetailTypeSelect.Name = "lbMainDetailTypeSelect";
+            // 
+            // combDetailType
+            // 
+            resources.ApplyResources(combDetailType, "combDetailType");
+            combDetailType.FormattingEnabled = true;
+            combDetailType.Items.AddRange(new object[] { resources.GetString("combDetailType.Items"), resources.GetString("combDetailType.Items1"), resources.GetString("combDetailType.Items2"), resources.GetString("combDetailType.Items3") });
+            combDetailType.Name = "combDetailType";
+            combDetailType.SelectedIndexChanged += combDetailType_SelectedIndexChanged;
+            // 
+            // textBox2
+            // 
+            resources.ApplyResources(textBox2, "textBox2");
+            textBox2.Name = "textBox2";
+            textBox2.TextChanged += TextChanged;
+            textBox2.KeyPress += KeyPress;
+            // 
+            // textBox3
+            // 
+            resources.ApplyResources(textBox3, "textBox3");
+            textBox3.Name = "textBox3";
+            textBox3.TextChanged += TextChanged;
+            textBox3.KeyPress += KeyPress;
+            // 
+            // combTransistorType
+            // 
+            resources.ApplyResources(combTransistorType, "combTransistorType");
+            combTransistorType.FormattingEnabled = true;
+            combTransistorType.Items.AddRange(new object[] { resources.GetString("combTransistorType.Items"), resources.GetString("combTransistorType.Items1") });
+            combTransistorType.Name = "combTransistorType";
+            // 
+            // lbCurrent
+            // 
+            resources.ApplyResources(lbCurrent, "lbCurrent");
+            lbCurrent.Name = "lbCurrent";
+            lbCurrent.Click += label2_Click;
+            // 
+            // combCapasitorType
+            // 
+            resources.ApplyResources(combCapasitorType, "combCapasitorType");
+            combCapasitorType.FormattingEnabled = true;
+            combCapasitorType.Items.AddRange(new object[] { resources.GetString("combCapasitorType.Items") });
+            combCapasitorType.Name = "combCapasitorType";
+            // 
+            // lbAllowableTemp
+            // 
+            resources.ApplyResources(lbAllowableTemp, "lbAllowableTemp");
+            lbAllowableTemp.Name = "lbAllowableTemp";
+            // 
+            // lbCapasity
+            // 
+            resources.ApplyResources(lbCapasity, "lbCapasity");
+            lbCapasity.Name = "lbCapasity";
+            // 
+            // tbCapasity
+            // 
+            resources.ApplyResources(tbCapasity, "tbCapasity");
+            tbCapasity.Name = "tbCapasity";
+            tbCapasity.TextChanged += TextChanged;
+            tbCapasity.KeyPress += KeyPress;
+            // 
+            // btAdmin
+            // 
+            resources.ApplyResources(btAdmin, "btAdmin");
+            btAdmin.Image = Handbook_of_radio_amateurs.Properties.Resources.input_onlinebitmaptools;
+            btAdmin.Name = "btAdmin";
+            btAdmin.UseVisualStyleBackColor = true;
+            btAdmin.Click += btAdmin_Click;
+            // 
+            // lbVoltage
+            // 
+            resources.ApplyResources(lbVoltage, "lbVoltage");
+            lbVoltage.Name = "lbVoltage";
+            // 
+            // lbTransistorType
+            // 
+            resources.ApplyResources(lbTransistorType, "lbTransistorType");
+            lbTransistorType.Name = "lbTransistorType";
+            // 
+            // lbCapacitorType
+            // 
+            resources.ApplyResources(lbCapacitorType, "lbCapacitorType");
+            lbCapacitorType.Name = "lbCapacitorType";
+            // 
+            // lbModel
+            // 
+            resources.ApplyResources(lbModel, "lbModel");
+            lbModel.Name = "lbModel";
+            // 
+            // tbModel
+            // 
+            resources.ApplyResources(tbModel, "tbModel");
+            tbModel.Name = "tbModel";
             // 
             // imgColum
             // 
@@ -167,7 +269,7 @@
             // 
             // typeColum
             // 
-            typeColum.DataPropertyName = "Type";
+            typeColum.DataPropertyName = "Model";
             resources.ApplyResources(typeColum, "typeColum");
             typeColum.Name = "typeColum";
             // 
@@ -206,108 +308,21 @@
             resources.ApplyResources(btDetails, "btDetails");
             btDetails.Name = "btDetails";
             // 
-            // lbMainDetailTypeSelect
-            // 
-            resources.ApplyResources(lbMainDetailTypeSelect, "lbMainDetailTypeSelect");
-            lbMainDetailTypeSelect.Name = "lbMainDetailTypeSelect";
-            // 
-            // combDetailType
-            // 
-            combDetailType.FormattingEnabled = true;
-            combDetailType.Items.AddRange(new object[] { resources.GetString("combDetailType.Items"), resources.GetString("combDetailType.Items1"), resources.GetString("combDetailType.Items2"), resources.GetString("combDetailType.Items3") });
-            resources.ApplyResources(combDetailType, "combDetailType");
-            combDetailType.Name = "combDetailType";
-            combDetailType.SelectedIndexChanged += combDetailType_SelectedIndexChanged;
-            // 
-            // textBox2
-            // 
-            resources.ApplyResources(textBox2, "textBox2");
-            textBox2.Name = "textBox2";
-            textBox2.TextChanged += TextChanged;
-            textBox2.KeyPress += KeyPress;
-            // 
-            // textBox3
-            // 
-            resources.ApplyResources(textBox3, "textBox3");
-            textBox3.Name = "textBox3";
-            textBox3.TextChanged += TextChanged;
-            textBox3.KeyPress += KeyPress;
-            // 
-            // combTransistorType
-            // 
-            combTransistorType.FormattingEnabled = true;
-            combTransistorType.Items.AddRange(new object[] { resources.GetString("combTransistorType.Items"), resources.GetString("combTransistorType.Items1") });
-            resources.ApplyResources(combTransistorType, "combTransistorType");
-            combTransistorType.Name = "combTransistorType";
-            // 
-            // lbTransistorType
-            // 
-            resources.ApplyResources(lbTransistorType, "lbTransistorType");
-            lbTransistorType.Name = "lbTransistorType";
-            lbTransistorType.UseWaitCursor = true;
-            // 
-            // lbVoltage
-            // 
-            resources.ApplyResources(lbVoltage, "lbVoltage");
-            lbVoltage.Name = "lbVoltage";
-            // 
-            // lbCurrent
-            // 
-            resources.ApplyResources(lbCurrent, "lbCurrent");
-            lbCurrent.Name = "lbCurrent";
-            lbCurrent.Click += label2_Click;
-            // 
-            // lbCapasitorType
-            // 
-            resources.ApplyResources(lbCapasitorType, "lbCapasitorType");
-            lbCapasitorType.Name = "lbCapasitorType";
-            lbCapasitorType.Click += lbCapasitorType_Click;
-            // 
-            // combCapasitorType
-            // 
-            combCapasitorType.FormattingEnabled = true;
-            combCapasitorType.Items.AddRange(new object[] { resources.GetString("combCapasitorType.Items") });
-            resources.ApplyResources(combCapasitorType, "combCapasitorType");
-            combCapasitorType.Name = "combCapasitorType";
-            // 
-            // lbAllowableTemp
-            // 
-            resources.ApplyResources(lbAllowableTemp, "lbAllowableTemp");
-            lbAllowableTemp.Name = "lbAllowableTemp";
-            // 
-            // lbCapasity
-            // 
-            resources.ApplyResources(lbCapasity, "lbCapasity");
-            lbCapasity.Name = "lbCapasity";
-            // 
-            // tbCapasity
-            // 
-            resources.ApplyResources(tbCapasity, "tbCapasity");
-            tbCapasity.Name = "tbCapasity";
-            tbCapasity.TextChanged += TextChanged;
-            tbCapasity.KeyPress += KeyPress;
-            // 
-            // btAdmin
-            // 
-            btAdmin.Image = Handbook_of_radio_amateurs.Properties.Resources.input_onlinebitmaptools;
-            resources.ApplyResources(btAdmin, "btAdmin");
-            btAdmin.Name = "btAdmin";
-            btAdmin.UseVisualStyleBackColor = true;
-            btAdmin.Click += btAdmin_Click;
-            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(tbModel);
+            Controls.Add(lbModel);
+            Controls.Add(lbCapacitorType);
+            Controls.Add(lbTransistorType);
+            Controls.Add(lbVoltage);
             Controls.Add(btAdmin);
             Controls.Add(tbCapasity);
             Controls.Add(lbCapasity);
             Controls.Add(lbAllowableTemp);
             Controls.Add(combCapasitorType);
-            Controls.Add(lbCapasitorType);
             Controls.Add(lbCurrent);
-            Controls.Add(lbVoltage);
-            Controls.Add(lbTransistorType);
             Controls.Add(combTransistorType);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
@@ -330,15 +345,17 @@
         private TextBox textBox2;
         private TextBox textBox3;
         private ComboBox combTransistorType;
-        private Label lbTransistorType;
-        private Label lbVoltage;
         private Label lbCurrent;
-        private Label lbCapasitorType;
         private ComboBox combCapasitorType;
         private Label lbAllowableTemp;
         private Label lbCapasity;
         private TextBox tbCapasity;
         private Button btAdmin;
+        private Label lbVoltage;
+        private Label lbTransistorType;
+        private Label lbCapacitorType;
+        public Label lbModel;
+        public TextBox tbModel;
         private DataGridViewImageColumn imgColum;
         private DataGridViewTextBoxColumn typeColum;
         private DataGridViewTextBoxColumn voltageColum;

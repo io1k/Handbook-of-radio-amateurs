@@ -97,7 +97,7 @@ namespace Handbook_of_amaters_try.Forms
             {
                 data.Add(new Transistor()
                 {
-                    Name = Convert.ToString(tbName.Text),
+                    Model = Convert.ToString(tbName.Text),
                     Price = Convert.ToInt32(tbPrice.Text),
                     Description = Convert.ToString(rtbDescription.Text),
                     Link = Convert.ToString(tbLink.Text),
@@ -113,7 +113,7 @@ namespace Handbook_of_amaters_try.Forms
             {
                 data.Add(new Capasitor()
                 {
-                    Name = Convert.ToString(tbName.Text),
+                    Model = Convert.ToString(tbName.Text),
                     Price = Convert.ToInt32(tbPrice.Text),
                     Description = Convert.ToString(rtbDescription.Text),
                     Link = Convert.ToString(tbLink.Text),
