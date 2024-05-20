@@ -54,11 +54,25 @@ namespace Handbook_of_radio_amauter.Data
 
             return resultList;
         }
+        public List<Diode> SortedDiode(List<Diode> list, string model, string shellType, double voltage, double current)
+        {
+            List<Diode> resultList = new List<Diode>(list);
+
+            resultList.Sort((a, b) =>
+            {
+                double scoreA = a.CalculateDeference(a, model, shellType, current, voltage);
+                double scoreB = b.CalculateDeference(b, model, shellType, current, voltage);
+                return scoreB.CompareTo(scoreA);
+            });
+
+            return resultList;
+        }
         public List<List<object>> AddAllLists()
         {
             List<List<object>> myList = new List<List<object>>();
             myList.Add(ReadDetails<Transistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\TransistorData.json").Select(x => (object)x).ToList());
             myList.Add(ReadDetails<Capasitor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\CapasitorData.json").Select(x => (object)x).ToList());
+            myList.Add(ReadDetails<Diode>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\DiodesData.json").Select(x => (object)x).ToList());
             return myList;
         }
     }   

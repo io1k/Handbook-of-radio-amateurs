@@ -117,80 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="imgColum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="columShellType.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="typeColum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="voltageColum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="currentColum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="capasityColum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="allowebleTempColum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="priceColum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btDetails.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 605</value>
-  </data>
-  <data name="typeColum.HeaderText" xml:space="preserve">
-    <value>Model</value>
-  </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 318</value>
-  </data>
-  <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 397</value>
-  </data>
-  <data name="combTransistorType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 249</value>
-  </data>
-  <data name="lbCurrent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 363</value>
-  </data>
-  <data name="combCapasitorType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 249</value>
-  </data>
-  <data name="lbAllowableTemp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 363</value>
-  </data>
-  <data name="lbCapasity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 443</value>
-  </data>
-  <data name="tbCapasity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 475</value>
-  </data>
-  <data name="lbVoltage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 295</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lbVoltage.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="lbTransistorType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 226</value>
-  </data>
-  <data name="lbTransistorType.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="lbCapacitorType.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbCapacitorType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 226</value>
-  </data>
-  <data name="lbCapacitorType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 20</value>
-  </data>
-  <data name="lbCapacitorType.Text" xml:space="preserve">
-    <value>Select capacitor type</value>
-  </data>
-  <data name="lbModel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbModel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 117</value>
-  </data>
-  <data name="lbModel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 20</value>
-  </data>
-  <data name="lbModel.Text" xml:space="preserve">
-    <value>Enter model</value>
-  </data>
-  <data name="tbModel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 140</value>
-  </data>
-  <data name="tbModel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 27</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEA4eEAAAEACACs6AAAFgAAACgAAADhAAAAwgEAAAEACAAAAAAAZMgAAAAAAAAAAAAAAAEAAAAB

@@ -1,4 +1,5 @@
 ﻿using Handbook_of_radio_amateurs;
+using Handbook_of_radio_amateurs.Forms;
 using Handbook_of_radio_amauter.Data;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ namespace Handbook_of_amaters_try.Forms
 
             if (password == tbPassword.Text)
             {
-                var admin = new Administrator(currentType, DetailList);
+                var admin = new AdminForm(currentType, DetailList);
                 admin.Show();
                 this.Close();
             }

@@ -1,5 +1,4 @@
-﻿using Handbook_of_radio_amateurs;
-using Handbook_of_radio_amauter.Data;
+﻿using Handbook_of_radio_amauter.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,33 +6,27 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Linq.Expressions;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Runtime.Serialization;
+using static System.Windows.Forms.LinkLabel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Xml.Linq;
 
-namespace Handbook_of_amaters_try.Forms
+namespace Handbook_of_radio_amateurs.Forms
 {
-    public partial class Administrator : Form
+    public partial class AdminForm : Form
     {
         private DataProces dataProces;
         private List<object> data;
         private string currentType;
-        public Administrator(string type, List<object> details)
+        public AdminForm(string type, List<object> details)
         {
             InitializeComponent();
             data = details;
             currentType = type;
             dataGridView1.DataSource = data;
             SetCurrentDetailProperty();
-        }
-
-        private void Update(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
         private void Action(object sender, DataGridViewCellEventArgs e)
         {
@@ -85,6 +78,16 @@ namespace Handbook_of_amaters_try.Forms
                         dataGridView1.DataSource = data;
                     }
                 }
+                else if (currentType == "Diode")
+                {
+                    Diode diodeItem = item as Diode;
+                    if (diodeItem != null)
+                    {
+                        data.Remove(diodeItem);
+                        dataGridView1.DataSource = null;
+                        dataGridView1.DataSource = data;
+                    }
+                }
             }
             catch (InvalidOperationException)
             {
@@ -122,7 +125,23 @@ namespace Handbook_of_amaters_try.Forms
                     Voltage = Convert.ToDouble(textBox2.Text),
                     Capasity = Convert.ToInt32(tbCapasity.Text),
                     AllowableTemperature = Convert.ToInt32(textBox3.Text)
-                }) ;
+                });
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = data;
+            }
+            else if (currentType == "Diode")
+            {
+                data.Add(new Diode()
+                {
+                    Model = Convert.ToString(tbName.Text),
+                    Price = Convert.ToInt32(tbPrice.Text),
+                    Description = Convert.ToString(rtbDescription.Text),
+                    Link = Convert.ToString(tbLink.Text),
+                    imageLink = Convert.ToString(tbImageLink.Text),
+                    ShellType = Convert.ToString(combDiodeShellType.Text),
+                    Voltage = Convert.ToDouble(textBox2.Text),
+                    Current = Convert.ToInt32(textBox3.Text)
+                });
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = data;
             }
@@ -139,29 +158,17 @@ namespace Handbook_of_amaters_try.Forms
             {
                 File.WriteAllText("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\CapasitorData.json", jsonString);
             }
-            
+            else if (currentType == "Diode")
+            {
+                File.WriteAllText("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\DiodesData.json", jsonString);
+            }
+
         }
 
         private void btSave_Click(object sender, EventArgs e)
         {
             Save();
         }
-
-        private void lbCurrent_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbPrice_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbDescription_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btAdd_Click(object sender, EventArgs e)
         {
             Add();
@@ -185,8 +192,5 @@ namespace Handbook_of_amaters_try.Forms
                 e.Cancel = true;
             }
         }
-        
     }
-
-
 }

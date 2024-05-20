@@ -1,22 +1,22 @@
-using Handbook_of_amaters_try.Forms;
-using Handbook_of_radio_amateurs;
+﻿using Handbook_of_amaters_try.Forms;
+using Handbook_of_amaters_try;
 using Handbook_of_radio_amauter.Data;
-using System.Collections;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
-using System.Dynamic;
-using System.Reflection;
-using System.Text.Json;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using static System.Windows.Forms.DataFormats;
 
-namespace Handbook_of_amaters_try
+namespace Handbook_of_radio_amateurs.Forms
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         public List<List<object>> currentDetailList;
-        public Form1()
+        public MainForm()
         {
             var proces = new DataProces();
             InitializeComponent();
@@ -24,7 +24,6 @@ namespace Handbook_of_amaters_try
             SetIconSize();
             currentDetailList = proces.AddAllLists();
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Details detailsForm = new Details();
@@ -74,13 +73,14 @@ namespace Handbook_of_amaters_try
             {
                 case "Transistor":
                     var transistor = Proces.ReadDetails<Transistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\TransistorData.json");
-                    var sortedtrans = Proces.SortedTransistor(transistor,tbModel.Text.ToString(), combTransistorType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text));
+                    var sortedtrans = Proces.SortedTransistor(transistor, tbModel.Text.ToString(), combTransistorType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text));
 
                     Proces.FormPicture(sortedtrans);
 
                     dataGridView1.DataSource = sortedtrans;
                     DataGridColumHide();
                     dataGridView1.Columns["btDetails"].DisplayIndex = dataGridView1.ColumnCount - 1;
+                    btDetails.Visible = true;
                     break;
 
                 case "Capacitor":
@@ -91,9 +91,22 @@ namespace Handbook_of_amaters_try
                     Proces.FormPicture(sortedcapas);
 
                     dataGridView1.DataSource = sortedcapas;
-
                     DataGridColumHide();
                     dataGridView1.Columns["btDetails"].DisplayIndex = dataGridView1.ColumnCount - 1;
+                    btDetails.Visible = true;
+                    break;
+
+                case "Diode":
+
+                    var diodes = Proces.ReadDetails<Diode>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\DiodesData.json");
+                    var sorteddiodes = Proces.SortedDiode(diodes, tbModel.Text.ToString(), combDiodeShellType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text));
+
+                    Proces.FormPicture(sorteddiodes);
+
+                    dataGridView1.DataSource = sorteddiodes;
+                    DataGridColumHide();
+                    dataGridView1.Columns["btDetails"].DisplayIndex = dataGridView1.ColumnCount - 1;
+                    btDetails.Visible = true;
                     break;
             }
         }
@@ -109,6 +122,10 @@ namespace Handbook_of_amaters_try
                 case "Capacitor":
                     Hide();
                     CapasitorView();
+                    break;
+                case "Diode":
+                    Hide();
+                    DiodeView();
                     break;
             }
         }
@@ -155,6 +172,11 @@ namespace Handbook_of_amaters_try
                 PasswordForm passform = new PasswordForm(password, currentDetailList[1], type);
                 passform.Show();
             }
+            else if (type == "Diode")
+            {
+                PasswordForm passform = new PasswordForm(password, currentDetailList[2], type);
+                passform.Show();
+            }
 
         }
 
@@ -162,6 +184,11 @@ namespace Handbook_of_amaters_try
         {
 
         }
-    }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
+
