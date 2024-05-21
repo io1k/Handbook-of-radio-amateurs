@@ -73,7 +73,15 @@ namespace Handbook_of_radio_amateurs.Forms
             {
                 case "Transistor":
                     var transistor = Proces.ReadDetails<Transistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\TransistorData.json");
-                    var sortedtrans = Proces.SortedTransistor(transistor, tbModel.Text.ToString(), combTransistorType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text));
+                    var sortedtrans = new List<Transistor>();
+                    try
+                    {
+                        sortedtrans = Proces.SortedTransistor(transistor, tbModel.Text.ToString(), combTransistorType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text));
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Please remove extra characters (, . - = +) from the input field or change the input order");
+                    }
 
                     Proces.FormPicture(sortedtrans);
 
@@ -86,8 +94,15 @@ namespace Handbook_of_radio_amateurs.Forms
                 case "Capacitor":
 
                     var capasitors = Proces.ReadDetails<Capasitor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\CapasitorData.json");
-                    var sortedcapas = Proces.SortedCapasitor(capasitors, tbModel.Text.ToString(), combCapasitorType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(tbCapasity.Text), Convert.ToDouble(textBox3.Text));
-
+                    var sortedcapas = new List<Capasitor>();
+                    try
+                    {
+                        sortedcapas = Proces.SortedCapasitor(capasitors, tbModel.Text.ToString(), combCapasitorType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(tbCapasity.Text), Convert.ToDouble(textBox3.Text));
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Please remove extra characters (, . - = +) from the input field or change the input order");
+                    }
                     Proces.FormPicture(sortedcapas);
 
                     dataGridView1.DataSource = sortedcapas;
@@ -99,11 +114,38 @@ namespace Handbook_of_radio_amateurs.Forms
                 case "Diode":
 
                     var diodes = Proces.ReadDetails<Diode>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\DiodesData.json");
-                    var sorteddiodes = Proces.SortedDiode(diodes, tbModel.Text.ToString(), combDiodeShellType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text));
-
+                    var sorteddiodes = new List<Diode>();
+                    try
+                    {
+                        sorteddiodes = Proces.SortedDiode(diodes, tbModel.Text.ToString(), combDiodeShellType.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text));
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Please remove extra characters (, . - = +) from the input field or change the input order");
+                    }
                     Proces.FormPicture(sorteddiodes);
 
                     dataGridView1.DataSource = sorteddiodes;
+                    DataGridColumHide();
+                    dataGridView1.Columns["btDetails"].DisplayIndex = dataGridView1.ColumnCount - 1;
+                    btDetails.Visible = true;
+                    break;
+
+                case "Resistor":
+
+                    var resistors = Proces.ReadDetails<Resistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\ResistorsData.json");
+                    var sortedResistors = new List<Resistor>();
+                    try
+                    {
+                        sortedResistors = Proces.SortedResistors(resistors, tbModel.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToInt32(textBox3.Text));
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Please remove extra characters (, . - = +) from the input field or change the input order");
+                    }
+                    Proces.FormPicture(sortedResistors);
+
+                    dataGridView1.DataSource = sortedResistors;
                     DataGridColumHide();
                     dataGridView1.Columns["btDetails"].DisplayIndex = dataGridView1.ColumnCount - 1;
                     btDetails.Visible = true;
@@ -112,7 +154,6 @@ namespace Handbook_of_radio_amateurs.Forms
         }
         private void combDetailType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var Process = new DataProces();
             switch (combDetailType.Text.ToString())
             {
                 case "Transistor":
@@ -127,11 +168,11 @@ namespace Handbook_of_radio_amateurs.Forms
                     Hide();
                     DiodeView();
                     break;
+                case "Resistor":
+                    Hide();
+                    ResistorView();
+                    break;
             }
-        }
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void TextChanged(object sender, EventArgs e)
@@ -143,17 +184,11 @@ namespace Handbook_of_radio_amateurs.Forms
         }
         private void KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '-'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
                 e.Handled = true;
             }
         }
-
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
-
         private void btAdmin_Click(object sender, EventArgs e)
         {
             var type = combDetailType.Text.ToString();
@@ -177,16 +212,11 @@ namespace Handbook_of_radio_amateurs.Forms
                 PasswordForm passform = new PasswordForm(password, currentDetailList[2], type);
                 passform.Show();
             }
-
-        }
-
-        private void lbCapasitorType_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
+            else if (type == "Resistor")
+            {
+                PasswordForm passform = new PasswordForm(password, currentDetailList[3], type);
+                passform.Show();
+            }
 
         }
     }

@@ -162,6 +162,10 @@ namespace Handbook_of_radio_amateurs.Forms
             {
                 File.WriteAllText("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\DiodesData.json", jsonString);
             }
+            else if (currentType == "Resistor")
+            {
+                File.WriteAllText("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\DiodesData.json", jsonString);
+            }
 
         }
 
@@ -191,6 +195,11 @@ namespace Handbook_of_radio_amateurs.Forms
             {
                 e.Cancel = true;
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

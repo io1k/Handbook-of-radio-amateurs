@@ -366,6 +366,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(768, 827);
             dataGridView1.TabIndex = 44;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // columDelete
             // 
@@ -417,6 +418,7 @@
             Controls.Add(dataGridView1);
             Name = "AdminForm";
             Text = "AdminForm";
+            FormClosing += Administrator_FormClosing;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

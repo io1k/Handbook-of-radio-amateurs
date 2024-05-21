@@ -26,8 +26,6 @@
             textBox3.Visible = false;
             combTransistorType.Visible = false;
             lbTransistorType.Visible = false;
-            lbVoltage.Visible = false;
-            lbCurrent.Visible = false;
             imgColum.Visible = false;
             typeColum.Visible = false;
             voltageColum.Visible = false;
@@ -36,16 +34,19 @@
             capasityColum.Visible = false;
             allowebleTempColum.Visible = false;
             lbCapacitorType.Visible = false;
-            lbCapasity.Visible = false;
             tbCapasity.Visible = false;
             combCapasitorType.Visible = false;
-            lbAllowableTemp.Visible = false;
             btDetails.Visible = false;
             lbDiodeShellType.Visible = false;
             combDiodeShellType.Visible = false;
             lbModel.Visible = false;
             tbModel.Visible = false;
             columShellType.Visible = false;
+            columResistance.Visible = false;
+            columTolerance.Visible = false;
+            lbMain1.Text = "";
+            lbMain2.Text = "";
+            lbMain3.Text = "";
         }
         public void TransistorView()
         {
@@ -54,8 +55,6 @@
             textBox3.Visible = true;
             combTransistorType.Visible = true;
             lbTransistorType.Visible = true;
-            lbVoltage.Visible = true;
-            lbCurrent.Visible = true;
             textBox2.Text = "0";
             textBox3.Text = "0";
             imgColum.Visible = true;
@@ -63,9 +62,11 @@
             voltageColum.Visible = true;
             currentColum.Visible = true;
             priceColum.Visible = true;
-            dataGridView1.RowTemplate.Height = 200;
+            dataGridView1.RowTemplate.Height = 150;
             lbModel.Visible = true;
             tbModel.Visible = true;
+            lbMain1.Text = "Voltage";
+            lbMain2.Text = "Current";
         }
 
         public void CapasitorView()
@@ -74,15 +75,12 @@
             textBox2.Visible = true;
             textBox3.Visible = true;
             lbCapacitorType.Visible = true;
-            lbVoltage.Visible = true;
-            lbCapasity.Visible = true;
             tbCapasity.Visible = true;
             combCapasitorType.Visible = true;
-            lbAllowableTemp.Visible = true;
             textBox2.Text = "0";
             textBox3.Text = "0";
             tbCapasity.Text = "0";
-            dataGridView1.RowTemplate.Height = 200;
+            dataGridView1.RowTemplate.Height = 150;
             imgColum.Visible = true;
             typeColum.Visible = true;
             voltageColum.Visible = true;
@@ -91,6 +89,9 @@
             priceColum.Visible = true;
             lbModel.Visible = true;
             tbModel.Visible = true;
+            lbMain1.Text = "Voltage";
+            lbMain2.Text = "Available temperature";
+            lbMain3.Text = "Capasity";
         }
         public void DiodeView()
         {
@@ -99,18 +100,36 @@
             combDiodeShellType.Visible= true;
             textBox2.Visible = true;
             textBox3.Visible = true;
-            lbCurrent.Visible = true;
             tbModel.Visible = true;
             priceColum.Visible = true;
             imgColum.Visible = true;
-            dataGridView1.RowTemplate.Height = 200;
+            dataGridView1.RowTemplate.Height = 150;
             lbModel.Visible = true;
             textBox2.Text = "0";
             textBox3.Text = "0";
-            lbVoltage.Visible = true;
             columShellType.Visible = true;
             voltageColum.Visible = true;
             currentColum.Visible = true;
+            lbMain2.Text = "Current";
+            lbMain1.Text = "Voltage";
+
+        }
+        public void ResistorView()
+        {
+            lbMain2.Text = "Resistance";
+            lbMain1.Text = "Tolerance";
+            btSearch.Visible = true;
+            textBox2.Visible = true;
+            textBox3.Visible = true;
+            tbModel.Visible = true;
+            priceColum.Visible = true;
+            imgColum.Visible = true;
+            dataGridView1.RowTemplate.Height = 150;
+            lbModel.Visible = true;
+            columResistance.Visible = true;
+            columTolerance.Visible = true;
+            textBox2.Text = "0";
+            textBox3.Text = "0";
         }
         public void DataGridColumHide()
         {
@@ -140,13 +159,9 @@
             lbModel = new Label();
             lbCapacitorType = new Label();
             lbTransistorType = new Label();
-            lbVoltage = new Label();
             btAdmin = new Button();
             tbCapasity = new TextBox();
-            lbCapasity = new Label();
-            lbAllowableTemp = new Label();
             combCapasitorType = new ComboBox();
-            lbCurrent = new Label();
             combTransistorType = new ComboBox();
             textBox3 = new TextBox();
             textBox2 = new TextBox();
@@ -154,9 +169,9 @@
             lbMainDetailTypeSelect = new Label();
             btSearch = new Button();
             dataGridView1 = new DataGridView();
-            lbDiodeShellType = new Label();
-            combDiodeShellType = new ComboBox();
             imgColum = new DataGridViewImageColumn();
+            columResistance = new DataGridViewTextBoxColumn();
+            columTolerance = new DataGridViewTextBoxColumn();
             columShellType = new DataGridViewTextBoxColumn();
             typeColum = new DataGridViewTextBoxColumn();
             voltageColum = new DataGridViewTextBoxColumn();
@@ -165,12 +180,17 @@
             allowebleTempColum = new DataGridViewTextBoxColumn();
             priceColum = new DataGridViewTextBoxColumn();
             btDetails = new DataGridViewButtonColumn();
+            lbDiodeShellType = new Label();
+            combDiodeShellType = new ComboBox();
+            lbMain1 = new Label();
+            lbMain2 = new Label();
+            lbMain3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // tbModel
             // 
-            tbModel.Location = new Point(18, 118);
+            tbModel.Location = new Point(18, 185);
             tbModel.Name = "tbModel";
             tbModel.Size = new Size(125, 27);
             tbModel.TabIndex = 39;
@@ -179,7 +199,7 @@
             // 
             lbModel.AutoSize = true;
             lbModel.ImeMode = ImeMode.NoControl;
-            lbModel.Location = new Point(18, 95);
+            lbModel.Location = new Point(21, 162);
             lbModel.Name = "lbModel";
             lbModel.Size = new Size(90, 20);
             lbModel.TabIndex = 38;
@@ -205,16 +225,6 @@
             lbTransistorType.TabIndex = 36;
             lbTransistorType.Text = "Select transistor type";
             // 
-            // lbVoltage
-            // 
-            lbVoltage.AutoSize = true;
-            lbVoltage.ImeMode = ImeMode.NoControl;
-            lbVoltage.Location = new Point(18, 275);
-            lbVoltage.Name = "lbVoltage";
-            lbVoltage.Size = new Size(60, 20);
-            lbVoltage.TabIndex = 35;
-            lbVoltage.Text = "Voltage";
-            // 
             // btAdmin
             // 
             btAdmin.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
@@ -232,26 +242,8 @@
             tbCapasity.Name = "tbCapasity";
             tbCapasity.Size = new Size(125, 27);
             tbCapasity.TabIndex = 33;
-            // 
-            // lbCapasity
-            // 
-            lbCapasity.AutoSize = true;
-            lbCapasity.ImeMode = ImeMode.NoControl;
-            lbCapasity.Location = new Point(18, 381);
-            lbCapasity.Name = "lbCapasity";
-            lbCapasity.Size = new Size(65, 20);
-            lbCapasity.TabIndex = 32;
-            lbCapasity.Text = "Capasity";
-            // 
-            // lbAllowableTemp
-            // 
-            lbAllowableTemp.AutoSize = true;
-            lbAllowableTemp.ImeMode = ImeMode.NoControl;
-            lbAllowableTemp.Location = new Point(21, 328);
-            lbAllowableTemp.Name = "lbAllowableTemp";
-            lbAllowableTemp.Size = new Size(161, 20);
-            lbAllowableTemp.TabIndex = 31;
-            lbAllowableTemp.Text = "Available temperature ";
+            tbCapasity.TextChanged += TextChanged;
+            tbCapasity.KeyPress += KeyPress;
             // 
             // combCapasitorType
             // 
@@ -261,17 +253,6 @@
             combCapasitorType.Name = "combCapasitorType";
             combCapasitorType.Size = new Size(151, 28);
             combCapasitorType.TabIndex = 30;
-            // 
-            // lbCurrent
-            // 
-            lbCurrent.AutoSize = true;
-            lbCurrent.ImeMode = ImeMode.NoControl;
-            lbCurrent.Location = new Point(21, 328);
-            lbCurrent.Name = "lbCurrent";
-            lbCurrent.RightToLeft = RightToLeft.No;
-            lbCurrent.Size = new Size(57, 20);
-            lbCurrent.TabIndex = 29;
-            lbCurrent.Text = "Current";
             // 
             // combTransistorType
             // 
@@ -288,14 +269,18 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(125, 27);
             textBox3.TabIndex = 27;
+            textBox3.TextChanged += TextChanged;
+            textBox3.KeyPress += KeyPress;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(18, 298);
+            textBox2.Location = new Point(18, 299);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(125, 27);
             textBox2.TabIndex = 26;
             textBox2.WordWrap = false;
+            textBox2.TextChanged += TextChanged;
+            textBox2.KeyPress += KeyPress;
             // 
             // combDetailType
             // 
@@ -330,11 +315,11 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { imgColum, columShellType, typeColum, voltageColum, currentColum, capasityColum, allowebleTempColum, priceColum, btDetails });
-            dataGridView1.Dock = DockStyle.Right;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { imgColum, columResistance, columTolerance, columShellType, typeColum, voltageColum, currentColum, capasityColum, allowebleTempColum, priceColum, btDetails });
             dataGridView1.EditMode = DataGridViewEditMode.EditOnF2;
             dataGridView1.GridColor = SystemColors.MenuText;
             dataGridView1.Location = new Point(458, 0);
@@ -345,32 +330,30 @@
             dataGridView1.TabIndex = 23;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // lbDiodeShellType
-            // 
-            lbDiodeShellType.AutoSize = true;
-            lbDiodeShellType.Location = new Point(18, 222);
-            lbDiodeShellType.Name = "lbDiodeShellType";
-            lbDiodeShellType.Size = new Size(159, 20);
-            lbDiodeShellType.TabIndex = 40;
-            lbDiodeShellType.Text = "Select diode shell type";
-            // 
-            // combDiodeShellType
-            // 
-            combDiodeShellType.FormattingEnabled = true;
-            combDiodeShellType.Items.AddRange(new object[] { "DO-41", "DO-15", "DO-27", "DO-41" });
-            combDiodeShellType.Location = new Point(18, 245);
-            combDiodeShellType.Name = "combDiodeShellType";
-            combDiodeShellType.Size = new Size(151, 28);
-            combDiodeShellType.TabIndex = 41;
-            // 
             // imgColum
             // 
             imgColum.DataPropertyName = "image";
             imgColum.HeaderText = "";
-            imgColum.MinimumWidth = 125;
+            imgColum.MinimumWidth = 150;
             imgColum.Name = "imgColum";
             imgColum.ReadOnly = true;
             imgColum.Width = 150;
+            // 
+            // columResistance
+            // 
+            columResistance.DataPropertyName = "Resistance";
+            columResistance.HeaderText = "Resistance";
+            columResistance.MinimumWidth = 6;
+            columResistance.Name = "columResistance";
+            columResistance.Width = 125;
+            // 
+            // columTolerance
+            // 
+            columTolerance.DataPropertyName = "Tolerance";
+            columTolerance.HeaderText = "Tolerance";
+            columTolerance.MinimumWidth = 6;
+            columTolerance.Name = "columTolerance";
+            columTolerance.Width = 125;
             // 
             // columShellType
             // 
@@ -435,24 +418,65 @@
             btDetails.Name = "btDetails";
             btDetails.Width = 125;
             // 
+            // lbDiodeShellType
+            // 
+            lbDiodeShellType.AutoSize = true;
+            lbDiodeShellType.Location = new Point(21, 222);
+            lbDiodeShellType.Name = "lbDiodeShellType";
+            lbDiodeShellType.Size = new Size(159, 20);
+            lbDiodeShellType.TabIndex = 40;
+            lbDiodeShellType.Text = "Select diode shell type";
+            // 
+            // combDiodeShellType
+            // 
+            combDiodeShellType.FormattingEnabled = true;
+            combDiodeShellType.Items.AddRange(new object[] { "DO-41", "DO-15", "DO-27", "DO-41" });
+            combDiodeShellType.Location = new Point(18, 245);
+            combDiodeShellType.Name = "combDiodeShellType";
+            combDiodeShellType.Size = new Size(151, 28);
+            combDiodeShellType.TabIndex = 41;
+            // 
+            // lbMain1
+            // 
+            lbMain1.AutoSize = true;
+            lbMain1.Location = new Point(21, 276);
+            lbMain1.Name = "lbMain1";
+            lbMain1.Size = new Size(0, 20);
+            lbMain1.TabIndex = 42;
+            // 
+            // lbMain2
+            // 
+            lbMain2.AutoSize = true;
+            lbMain2.Location = new Point(21, 328);
+            lbMain2.Name = "lbMain2";
+            lbMain2.Size = new Size(0, 20);
+            lbMain2.TabIndex = 43;
+            // 
+            // lbMain3
+            // 
+            lbMain3.AutoSize = true;
+            lbMain3.Location = new Point(21, 381);
+            lbMain3.Name = "lbMain3";
+            lbMain3.Size = new Size(0, 20);
+            lbMain3.TabIndex = 44;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1213, 643);
+            Controls.Add(lbMain3);
+            Controls.Add(lbMain2);
+            Controls.Add(lbMain1);
             Controls.Add(combDiodeShellType);
             Controls.Add(lbDiodeShellType);
             Controls.Add(tbModel);
             Controls.Add(lbModel);
             Controls.Add(lbCapacitorType);
             Controls.Add(lbTransistorType);
-            Controls.Add(lbVoltage);
             Controls.Add(btAdmin);
             Controls.Add(tbCapasity);
-            Controls.Add(lbCapasity);
-            Controls.Add(lbAllowableTemp);
             Controls.Add(combCapasitorType);
-            Controls.Add(lbCurrent);
             Controls.Add(combTransistorType);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
@@ -463,7 +487,6 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
             Text = "Handbook of radio amauters";
-            Load += MainForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -475,13 +498,9 @@
         public Label lbModel;
         private Label lbCapacitorType;
         private Label lbTransistorType;
-        private Label lbVoltage;
         private Button btAdmin;
         private TextBox tbCapasity;
-        private Label lbCapasity;
-        private Label lbAllowableTemp;
         private ComboBox combCapasitorType;
-        private Label lbCurrent;
         private ComboBox combTransistorType;
         private TextBox textBox3;
         private TextBox textBox2;
@@ -491,7 +510,12 @@
         private DataGridView dataGridView1;
         private Label lbDiodeShellType;
         private ComboBox combDiodeShellType;
+        private Label lbMain1;
+        private Label lbMain2;
+        private Label lbMain3;
         private DataGridViewImageColumn imgColum;
+        private DataGridViewTextBoxColumn columResistance;
+        private DataGridViewTextBoxColumn columTolerance;
         private DataGridViewTextBoxColumn columShellType;
         private DataGridViewTextBoxColumn typeColum;
         private DataGridViewTextBoxColumn voltageColum;
