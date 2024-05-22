@@ -26,43 +26,34 @@ namespace Handbook_of_radio_amateurs.Forms
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Details detailsForm = new Details();
             if (e.ColumnIndex == btDetails.Index && e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
 
                 dynamic selectedItem = selectedRow.DataBoundItem;
                 List<string> result = new List<string>();
-                if (detailsForm != null && detailsForm.Visible)
+                var existingDetailsForm = Application.OpenForms.OfType<Details>().FirstOrDefault();
+
+                if (existingDetailsForm != null)
                 {
-                    foreach (var property in selectedItem.GetType().GetProperties())
-                    {
-                        if (property.Name == "Id" || property.Name == "imageLink" || property.Name == "image" || property.Name == "imageLink" || property.Name == "Link")
-                        {
-                            continue;
-                        }
-                        result.Add(property.Name + ":  " + property.GetValue(selectedItem));
-                    }
-                    detailsForm.pbDetailImage.Image = selectedItem.image;
-                    detailsForm.linkLabel1.Text = selectedItem.Link;
-                    detailsForm.tbDetails.Text = string.Join(Environment.NewLine, result);
-                    detailsForm.Activate();
+                    existingDetailsForm.Close();
                 }
-                else
+
+                var detailsForm = new Details();
+
+                foreach (var property in selectedItem.GetType().GetProperties())
                 {
-                    foreach (var property in selectedItem.GetType().GetProperties())
+                    if (property.Name == "Id" || property.Name == "imageLink" || property.Name == "image" || property.Name == "imageLink" || property.Name == "Link")
                     {
-                        if (property.Name == "Id" || property.Name == "imageLink" || property.Name == "image" || property.Name == "imageLink" || property.Name == "Link")
-                        {
-                            continue;
-                        }
-                        result.Add(property.Name + ":  " + property.GetValue(selectedItem));
+                        continue;
                     }
-                    detailsForm.pbDetailImage.Image = selectedItem.image;
-                    detailsForm.linkLabel1.Text = selectedItem.Link;
-                    detailsForm.tbDetails.Text = string.Join(Environment.NewLine, result);
-                    detailsForm.Show();
+                    result.Add(property.Name + ":  " + property.GetValue(selectedItem));
                 }
+
+                detailsForm.pbDetailImage.Image = selectedItem.image;
+                detailsForm.linkLabel1.Text = selectedItem.Link;
+                detailsForm.tbDetails.Text = string.Join(Environment.NewLine, result);
+                detailsForm.Show();
             }
         }
 
@@ -137,7 +128,7 @@ namespace Handbook_of_radio_amateurs.Forms
                     var sortedResistors = new List<Resistor>();
                     try
                     {
-                        sortedResistors = Proces.SortedResistors(resistors, tbModel.Text.ToString(), Convert.ToDouble(textBox2.Text), Convert.ToInt32(textBox3.Text));
+                        sortedResistors = Proces.SortedResistors(resistors, tbModel.Text.ToString(), Convert.ToDouble(textBox3.Text), Convert.ToInt32(textBox2.Text));
                     }
                     catch (FormatException)
                     {
@@ -189,10 +180,19 @@ namespace Handbook_of_radio_amateurs.Forms
                 e.Handled = true;
             }
         }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.F1)
+            {
+                var helpForm = new Help();
+                helpForm.Show();
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void btAdmin_Click(object sender, EventArgs e)
         {
             var type = combDetailType.Text.ToString();
-            string password = "1";
+            string password = "1359";
             if (string.IsNullOrEmpty(type))
             {
                 MessageBox.Show("Please select detail type");

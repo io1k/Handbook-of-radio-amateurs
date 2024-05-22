@@ -35,7 +35,15 @@ namespace Handbook_of_amaters_try
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo("cmd", $"/c start {Convert.ToString(linkLabel1.Text)}") { CreateNoWindow = true });
+            try
+            {
+                Process.Start(new ProcessStartInfo("cmd", $"/c start {Convert.ToString(linkLabel1.Text)}") { CreateNoWindow = true });
+            }
+            catch(Exception) 
+            {
+                MessageBox.Show("Sorry there is a problem with link");
+            }
+
         }
 
         private void label1_Click(object sender, EventArgs e)

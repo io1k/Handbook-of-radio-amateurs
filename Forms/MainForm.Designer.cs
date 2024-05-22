@@ -47,6 +47,8 @@
             lbMain1.Text = "";
             lbMain2.Text = "";
             lbMain3.Text = "";
+            dataGridView1.Visible = false;
+            columType.Visible = false;
         }
         public void TransistorView()
         {
@@ -67,6 +69,8 @@
             tbModel.Visible = true;
             lbMain1.Text = "Voltage";
             lbMain2.Text = "Current";
+            dataGridView1.Visible = true;
+            columType.Visible = true;
         }
 
         public void CapasitorView()
@@ -82,9 +86,7 @@
             tbCapasity.Text = "0";
             dataGridView1.RowTemplate.Height = 150;
             imgColum.Visible = true;
-            typeColum.Visible = true;
             voltageColum.Visible = true;
-            allowebleTempColum.Visible = true;
             capasityColum.Visible = true;
             priceColum.Visible = true;
             lbModel.Visible = true;
@@ -92,6 +94,7 @@
             lbMain1.Text = "Voltage";
             lbMain2.Text = "Available temperature";
             lbMain3.Text = "Capasity";
+            dataGridView1.Visible = true;
         }
         public void DiodeView()
         {
@@ -112,7 +115,7 @@
             currentColum.Visible = true;
             lbMain2.Text = "Current";
             lbMain1.Text = "Voltage";
-
+            dataGridView1.Visible = true;
         }
         public void ResistorView()
         {
@@ -130,6 +133,7 @@
             columTolerance.Visible = true;
             textBox2.Text = "0";
             textBox3.Text = "0";
+            dataGridView1.Visible = true;
         }
         public void DataGridColumHide()
         {
@@ -169,7 +173,13 @@
             lbMainDetailTypeSelect = new Label();
             btSearch = new Button();
             dataGridView1 = new DataGridView();
+            lbDiodeShellType = new Label();
+            combDiodeShellType = new ComboBox();
+            lbMain1 = new Label();
+            lbMain2 = new Label();
+            lbMain3 = new Label();
             imgColum = new DataGridViewImageColumn();
+            columType = new DataGridViewTextBoxColumn();
             columResistance = new DataGridViewTextBoxColumn();
             columTolerance = new DataGridViewTextBoxColumn();
             columShellType = new DataGridViewTextBoxColumn();
@@ -180,11 +190,6 @@
             allowebleTempColum = new DataGridViewTextBoxColumn();
             priceColum = new DataGridViewTextBoxColumn();
             btDetails = new DataGridViewButtonColumn();
-            lbDiodeShellType = new Label();
-            combDiodeShellType = new ComboBox();
-            lbMain1 = new Label();
-            lbMain2 = new Label();
-            lbMain3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -228,12 +233,15 @@
             // btAdmin
             // 
             btAdmin.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btAdmin.BackColor = SystemColors.Menu;
+            btAdmin.FlatStyle = FlatStyle.Flat;
+            btAdmin.ForeColor = SystemColors.Menu;
             btAdmin.ImeMode = ImeMode.NoControl;
-            btAdmin.Location = new Point(12, 583);
+            btAdmin.Location = new Point(12, 517);
             btAdmin.Name = "btAdmin";
             btAdmin.Size = new Size(48, 48);
             btAdmin.TabIndex = 34;
-            btAdmin.UseVisualStyleBackColor = true;
+            btAdmin.UseVisualStyleBackColor = false;
             btAdmin.Click += btAdmin_Click;
             // 
             // tbCapasity
@@ -251,7 +259,7 @@
             combCapasitorType.Items.AddRange(new object[] { "Electrolytic", "", "Aluminum polymer", "", "Electrolytic LOW ESR", "", "Electrolytically large", "", "Electrolytic SMD" });
             combCapasitorType.Location = new Point(18, 245);
             combCapasitorType.Name = "combCapasitorType";
-            combCapasitorType.Size = new Size(151, 28);
+            combCapasitorType.Size = new Size(125, 28);
             combCapasitorType.TabIndex = 30;
             // 
             // combTransistorType
@@ -260,7 +268,7 @@
             combTransistorType.Items.AddRange(new object[] { "Field-effect", "Bipolar" });
             combTransistorType.Location = new Point(18, 245);
             combTransistorType.Name = "combTransistorType";
-            combTransistorType.Size = new Size(151, 28);
+            combTransistorType.Size = new Size(125, 28);
             combTransistorType.TabIndex = 28;
             // 
             // textBox3
@@ -288,7 +296,7 @@
             combDetailType.Items.AddRange(new object[] { "Transistor", "Capacitor", "Resistor", "Diode" });
             combDetailType.Location = new Point(18, 53);
             combDetailType.Name = "combDetailType";
-            combDetailType.Size = new Size(151, 28);
+            combDetailType.Size = new Size(124, 28);
             combDetailType.TabIndex = 25;
             combDetailType.SelectedIndexChanged += combDetailType_SelectedIndexChanged;
             // 
@@ -315,108 +323,21 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { imgColum, columResistance, columTolerance, columShellType, typeColum, voltageColum, currentColum, capasityColum, allowebleTempColum, priceColum, btDetails });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { imgColum, columType, columResistance, columTolerance, columShellType, typeColum, voltageColum, currentColum, capasityColum, allowebleTempColum, priceColum, btDetails });
             dataGridView1.EditMode = DataGridViewEditMode.EditOnF2;
             dataGridView1.GridColor = SystemColors.MenuText;
-            dataGridView1.Location = new Point(458, 0);
-            dataGridView1.MaximumSize = new Size(1154, 655);
+            dataGridView1.Location = new Point(186, 12);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(755, 643);
+            dataGridView1.Size = new Size(988, 575);
             dataGridView1.TabIndex = 23;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // imgColum
-            // 
-            imgColum.DataPropertyName = "image";
-            imgColum.HeaderText = "";
-            imgColum.MinimumWidth = 150;
-            imgColum.Name = "imgColum";
-            imgColum.ReadOnly = true;
-            imgColum.Width = 150;
-            // 
-            // columResistance
-            // 
-            columResistance.DataPropertyName = "Resistance";
-            columResistance.HeaderText = "Resistance";
-            columResistance.MinimumWidth = 6;
-            columResistance.Name = "columResistance";
-            columResistance.Width = 125;
-            // 
-            // columTolerance
-            // 
-            columTolerance.DataPropertyName = "Tolerance";
-            columTolerance.HeaderText = "Tolerance";
-            columTolerance.MinimumWidth = 6;
-            columTolerance.Name = "columTolerance";
-            columTolerance.Width = 125;
-            // 
-            // columShellType
-            // 
-            columShellType.DataPropertyName = "ShellType";
-            columShellType.HeaderText = "Shell type";
-            columShellType.MinimumWidth = 6;
-            columShellType.Name = "columShellType";
-            columShellType.Width = 125;
-            // 
-            // typeColum
-            // 
-            typeColum.DataPropertyName = "Model";
-            typeColum.HeaderText = "Model";
-            typeColum.MinimumWidth = 6;
-            typeColum.Name = "typeColum";
-            typeColum.Width = 125;
-            // 
-            // voltageColum
-            // 
-            voltageColum.DataPropertyName = "Voltage";
-            voltageColum.HeaderText = "Voltage";
-            voltageColum.MinimumWidth = 6;
-            voltageColum.Name = "voltageColum";
-            voltageColum.Width = 125;
-            // 
-            // currentColum
-            // 
-            currentColum.DataPropertyName = "Current";
-            currentColum.HeaderText = "Current";
-            currentColum.MinimumWidth = 6;
-            currentColum.Name = "currentColum";
-            currentColum.Width = 125;
-            // 
-            // capasityColum
-            // 
-            capasityColum.DataPropertyName = "Capasity";
-            capasityColum.HeaderText = "Capasity";
-            capasityColum.MinimumWidth = 6;
-            capasityColum.Name = "capasityColum";
-            capasityColum.Width = 125;
-            // 
-            // allowebleTempColum
-            // 
-            allowebleTempColum.DataPropertyName = "AllowableTemperature";
-            allowebleTempColum.HeaderText = "Available temperature";
-            allowebleTempColum.MinimumWidth = 6;
-            allowebleTempColum.Name = "allowebleTempColum";
-            allowebleTempColum.Width = 125;
-            // 
-            // priceColum
-            // 
-            priceColum.DataPropertyName = "Price";
-            priceColum.HeaderText = "Price";
-            priceColum.MinimumWidth = 6;
-            priceColum.Name = "priceColum";
-            priceColum.Width = 125;
-            // 
-            // btDetails
-            // 
-            btDetails.HeaderText = "More detail";
-            btDetails.MinimumWidth = 6;
-            btDetails.Name = "btDetails";
-            btDetails.Width = 125;
             // 
             // lbDiodeShellType
             // 
@@ -433,7 +354,7 @@
             combDiodeShellType.Items.AddRange(new object[] { "DO-41", "DO-15", "DO-27", "DO-41" });
             combDiodeShellType.Location = new Point(18, 245);
             combDiodeShellType.Name = "combDiodeShellType";
-            combDiodeShellType.Size = new Size(151, 28);
+            combDiodeShellType.Size = new Size(125, 28);
             combDiodeShellType.TabIndex = 41;
             // 
             // lbMain1
@@ -460,11 +381,105 @@
             lbMain3.Size = new Size(0, 20);
             lbMain3.TabIndex = 44;
             // 
+            // imgColum
+            // 
+            imgColum.DataPropertyName = "image";
+            imgColum.HeaderText = "";
+            imgColum.MinimumWidth = 150;
+            imgColum.Name = "imgColum";
+            imgColum.ReadOnly = true;
+            // 
+            // columType
+            // 
+            columType.DataPropertyName = "Type";
+            columType.HeaderText = "Type";
+            columType.MinimumWidth = 6;
+            columType.Name = "columType";
+            columType.ReadOnly = true;
+            // 
+            // columResistance
+            // 
+            columResistance.DataPropertyName = "Resistance";
+            columResistance.HeaderText = "Resistance";
+            columResistance.MinimumWidth = 6;
+            columResistance.Name = "columResistance";
+            columResistance.ReadOnly = true;
+            // 
+            // columTolerance
+            // 
+            columTolerance.DataPropertyName = "Tolerance";
+            columTolerance.HeaderText = "Tolerance";
+            columTolerance.MinimumWidth = 6;
+            columTolerance.Name = "columTolerance";
+            columTolerance.ReadOnly = true;
+            // 
+            // columShellType
+            // 
+            columShellType.DataPropertyName = "ShellType";
+            columShellType.HeaderText = "Shell type";
+            columShellType.MinimumWidth = 6;
+            columShellType.Name = "columShellType";
+            columShellType.ReadOnly = true;
+            // 
+            // typeColum
+            // 
+            typeColum.DataPropertyName = "Model";
+            typeColum.HeaderText = "Model";
+            typeColum.MinimumWidth = 6;
+            typeColum.Name = "typeColum";
+            typeColum.ReadOnly = true;
+            // 
+            // voltageColum
+            // 
+            voltageColum.DataPropertyName = "Voltage";
+            voltageColum.HeaderText = "Voltage";
+            voltageColum.MinimumWidth = 6;
+            voltageColum.Name = "voltageColum";
+            voltageColum.ReadOnly = true;
+            // 
+            // currentColum
+            // 
+            currentColum.DataPropertyName = "Current";
+            currentColum.HeaderText = "Current";
+            currentColum.MinimumWidth = 6;
+            currentColum.Name = "currentColum";
+            currentColum.ReadOnly = true;
+            // 
+            // capasityColum
+            // 
+            capasityColum.DataPropertyName = "Capasity";
+            capasityColum.HeaderText = "Capasity";
+            capasityColum.MinimumWidth = 6;
+            capasityColum.Name = "capasityColum";
+            capasityColum.ReadOnly = true;
+            // 
+            // allowebleTempColum
+            // 
+            allowebleTempColum.DataPropertyName = "AllowableTemperature";
+            allowebleTempColum.HeaderText = "Available temperature";
+            allowebleTempColum.MinimumWidth = 6;
+            allowebleTempColum.Name = "allowebleTempColum";
+            allowebleTempColum.ReadOnly = true;
+            // 
+            // priceColum
+            // 
+            priceColum.DataPropertyName = "Price";
+            priceColum.HeaderText = "Price";
+            priceColum.MinimumWidth = 6;
+            priceColum.Name = "priceColum";
+            priceColum.ReadOnly = true;
+            // 
+            // btDetails
+            // 
+            btDetails.HeaderText = "More detail";
+            btDetails.MinimumWidth = 6;
+            btDetails.Name = "btDetails";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1213, 643);
+            ClientSize = new Size(1186, 575);
             Controls.Add(lbMain3);
             Controls.Add(lbMain2);
             Controls.Add(lbMain1);
@@ -485,6 +500,8 @@
             Controls.Add(dataGridView1);
             Controls.Add(btSearch);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximumSize = new Size(1500, 800);
+            MinimumSize = new Size(1204, 622);
             Name = "MainForm";
             Text = "Handbook of radio amauters";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -514,6 +531,7 @@
         private Label lbMain2;
         private Label lbMain3;
         private DataGridViewImageColumn imgColum;
+        private DataGridViewTextBoxColumn columType;
         private DataGridViewTextBoxColumn columResistance;
         private DataGridViewTextBoxColumn columTolerance;
         private DataGridViewTextBoxColumn columShellType;

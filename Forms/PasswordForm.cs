@@ -14,12 +14,12 @@ using System.Windows.Forms;
 namespace Handbook_of_amaters_try.Forms
 {
     public partial class PasswordForm : Form
-    { 
+    {
         private DataProces dataProces;
         private string password;
         private List<object> DetailList;
         private string currentType;
-        public PasswordForm(string pass,List<object> list, string type)
+        public PasswordForm(string pass, List<object> list, string type)
         {
             InitializeComponent();
             password = pass;
@@ -47,6 +47,13 @@ namespace Handbook_of_amaters_try.Forms
             }
         }
 
+        private void tbPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        }
 
+        private void lbEnterPassword_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

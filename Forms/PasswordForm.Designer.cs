@@ -35,21 +35,23 @@
             // 
             // btEnter
             // 
-            btEnter.Location = new Point(284, 46);
+            btEnter.Location = new Point(263, 32);
             btEnter.Name = "btEnter";
             btEnter.Size = new Size(37, 29);
             btEnter.TabIndex = 0;
+            btEnter.Text = "OK";
             btEnter.UseVisualStyleBackColor = true;
             btEnter.Click += btEnter_Click;
             // 
             // tbPassword
             // 
-            tbPassword.Location = new Point(12, 46);
+            tbPassword.Location = new Point(12, 32);
             tbPassword.Name = "tbPassword";
             tbPassword.Size = new Size(245, 27);
             tbPassword.TabIndex = 1;
             tbPassword.UseSystemPasswordChar = true;
             tbPassword.TextChanged += tbPassword_TextChanged;
+            tbPassword.KeyPress += tbPassword_KeyPress;
             // 
             // lbEnterPassword
             // 
@@ -59,15 +61,18 @@
             lbEnterPassword.Size = new Size(110, 20);
             lbEnterPassword.TabIndex = 2;
             lbEnterPassword.Text = "Enter password";
+            lbEnterPassword.Click += lbEnterPassword_Click;
             // 
             // PasswordForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(381, 85);
+            ClientSize = new Size(309, 68);
             Controls.Add(lbEnterPassword);
             Controls.Add(tbPassword);
             Controls.Add(btEnter);
+            Location = new Point(327, 115);
+            MaximumSize = new Size(327, 115);
             Name = "PasswordForm";
             Text = "Administrator";
             ResumeLayout(false);

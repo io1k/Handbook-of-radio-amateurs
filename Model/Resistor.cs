@@ -10,7 +10,7 @@ namespace Handbook_of_radio_amateurs
     public class Resistor: Detail
     {
         public double Resistance {  get; set; }
-        public double Voltage { get; set; }
+        public double Power { get; set; }
         public int Tolerance { get; set; }
         public double CalculateDeference(Resistor resistor, string model,double resistance,int tolerance)
         {

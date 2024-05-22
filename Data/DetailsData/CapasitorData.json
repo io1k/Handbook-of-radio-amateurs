@@ -9,7 +9,7 @@
     "Description": "--",
     "Link": "https://www.kosmodrom.ua/ru/kondensator-elektrolitichniy/ecap-rd-1000mkf-35v-1050c-rd.html",
     "image": null,
-    "imageLink": "C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of amaters try\\Data\\src\\Capasitors\\ECAP1000MKF35VRD13X20.jpg"
+    "imageLink": "Data\\src\\Capasitors\\ECAP1000MKF35VRD13X20.jpg"
   },
   {
     "Capasity": 1000,
@@ -21,6 +21,30 @@
     "Description": "Commonly used in electronic circuits. It has a capacitance of 1 microfarad (\u00B5F), a voltage rating of 50 volts (V), a case size of 5 mm x 11 mm, and an operating temperature range of -40 to \u002B105 degrees Celsius (\u00B0C).",
     "Link": "https://m-teh.com.ua/kondensator-tr-1uf-50v-511-105c/?utm_medium=cpc\u0026utm_source=google\u0026utm_campaign=max9\u0026utm_term=\u0026gad_source=1\u0026gclid=CjwKCAjwo6GyBhBwEiwAzQTmczc3F0uOGsa-6I5vnwAYnIQ_0HvRItBAveZsSNYoKNV5KUc0oAJlLxoCM_QQAvD_BwE",
     "image": null,
-    "imageLink": "C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\src\\Capasitors\\TR.jpg"
+    "imageLink": "Data\\src\\Capasitors\\TR.jpg"
+  },
+  {
+    "Capasity": 820,
+    "AllowableTemperature": 0,
+    "Type": "Aluminum polymer",
+    "Voltage": 6.3,
+    "Model": "PS427",
+    "Price": 12,
+    "Description": "Capacitors with an electrolyte made of conductive organic polymer. They have a long service life - up to 50,000 hours. Used on motherboards, video cards.",
+    "Link": "https://radiodetali.com.ua/ua/product/kondensator-polimernyy-820-uf-63-v-d8-h8-53875",
+    "image": null,
+    "imageLink": "Data\\src\\Capasitors\\PS.png"
+  },
+  {
+    "Capasity": 1000,
+    "AllowableTemperature": 105,
+    "Type": "Electrolytic",
+    "Voltage": 450,
+    "Model": "PS427",
+    "Price": 4,
+    "Description": "Electrolytic capacitors (in radio engineering, the slang name is often used - \u0022electrolytes\u0022) are low-frequency elements of an electric circuit, they are rarely used for operation at frequencies above 30 kHz.",
+    "Link": "https://radiodetali.com.ua/ua/product/kondensator-elektroliticheskiy-1-uf-450-v-105c-d8-h115-63860",
+    "image": null,
+    "imageLink": "Data\\src\\Capasitors\\1 uF 450 V, 105C, d8 h11,5.jpg"
   }
 ]

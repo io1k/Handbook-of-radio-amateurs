@@ -25,8 +25,10 @@ namespace Handbook_of_radio_amateurs.Forms
             InitializeComponent();
             data = details;
             currentType = type;
-            dataGridView1.DataSource = data;
             SetCurrentDetailProperty();
+            dataProces = new DataProces();
+            dataProces.FormPicture(data.OfType<Detail>().ToList());
+            dataGridView1.DataSource = data;
         }
         private void Action(object sender, DataGridViewCellEventArgs e)
         {
@@ -46,12 +48,6 @@ namespace Handbook_of_radio_amateurs.Forms
                 {
                     Delete(selectedItem);
                 }
-                else
-                {
-                    return;
-                }
-
-
             }
         }
         private void Delete<T>(T item)
@@ -88,6 +84,16 @@ namespace Handbook_of_radio_amateurs.Forms
                         dataGridView1.DataSource = data;
                     }
                 }
+                else if (currentType == "Resistor")
+                {
+                    Resistor diodeItem = item as Resistor;
+                    if (diodeItem != null)
+                    {
+                        data.Remove(diodeItem);
+                        dataGridView1.DataSource = null;
+                        dataGridView1.DataSource = data;
+                    }
+                }
             }
             catch (InvalidOperationException)
             {
@@ -96,59 +102,89 @@ namespace Handbook_of_radio_amateurs.Forms
         }
         private void Add()
         {
-            if (currentType == "Transistor")
+            try
             {
-                data.Add(new Transistor()
+                if (currentType == "Transistor")
                 {
-                    Model = Convert.ToString(tbName.Text),
-                    Price = Convert.ToInt32(tbPrice.Text),
-                    Description = Convert.ToString(rtbDescription.Text),
-                    Link = Convert.ToString(tbLink.Text),
-                    imageLink = Convert.ToString(tbImageLink.Text),
-                    Type = Convert.ToString(combTransistorType.Text),
-                    Voltage = Convert.ToDouble(textBox2.Text),
-                    Current = Convert.ToDouble(textBox3.Text)
-                });
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = data;
+                    data.Add(new Transistor()
+                    {
+                        Model = Convert.ToString(tbName.Text),
+                        Price = Convert.ToDouble(tbPrice.Text),
+                        Description = Convert.ToString(rtbDescription.Text),
+                        Link = Convert.ToString(tbLink.Text),
+                        imageLink = Convert.ToString(tbImageLink.Text),
+                        Type = Convert.ToString(combTransistorType.Text),
+                        Voltage = Convert.ToDouble(textBox2.Text),
+                        Current = Convert.ToDouble(textBox3.Text)
+                    });
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = data;
+                }
+                else if (currentType == "Capacitor")
+                {
+                    data.Add(new Capasitor()
+                    {
+                        Model = Convert.ToString(tbName.Text),
+                        Price = Convert.ToDouble(tbPrice.Text),
+                        Description = Convert.ToString(rtbDescription.Text),
+                        Link = Convert.ToString(tbLink.Text),
+                        imageLink = Convert.ToString(tbImageLink.Text),
+                        Type = Convert.ToString(combCapasitorType.Text),
+                        Voltage = Convert.ToDouble(textBox2.Text),
+                        Capasity = Convert.ToInt32(tbCapasity.Text),
+                        AllowableTemperature = Convert.ToInt32(textBox3.Text)
+                    });
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = data;
+                }
+                else if (currentType == "Diode")
+                {
+                    data.Add(new Diode()
+                    {
+                        Model = Convert.ToString(tbName.Text),
+                        Price = Convert.ToDouble(tbPrice.Text),
+                        Description = Convert.ToString(rtbDescription.Text),
+                        Link = Convert.ToString(tbLink.Text),
+                        imageLink = Convert.ToString(tbImageLink.Text),
+                        ShellType = Convert.ToString(combDiodeShellType.Text),
+                        Voltage = Convert.ToDouble(textBox2.Text),
+                        Current = Convert.ToInt32(textBox3.Text)
+                    });
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = data;
+                }
+                else if (currentType == "Resistor")
+                {
+                    data.Add(new Resistor()
+                    {
+                        Model = Convert.ToString(tbName.Text),
+                        Price = Convert.ToDouble(tbPrice.Text),
+                        Description = Convert.ToString(rtbDescription.Text),
+                        Link = Convert.ToString(tbLink.Text),
+                        imageLink = Convert.ToString(tbImageLink.Text),
+                        Power = Convert.ToDouble(tbCapasity.Text),
+                        Resistance = Convert.ToDouble(textBox3.Text),
+                        Tolerance = Convert.ToInt32(textBox2.Text)
+                    });
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = data;
+                }
             }
-            else if (currentType == "Capacitor")
+            catch (FormatException)
             {
-                data.Add(new Capasitor()
-                {
-                    Model = Convert.ToString(tbName.Text),
-                    Price = Convert.ToInt32(tbPrice.Text),
-                    Description = Convert.ToString(rtbDescription.Text),
-                    Link = Convert.ToString(tbLink.Text),
-                    imageLink = Convert.ToString(tbImageLink.Text),
-                    Type = Convert.ToString(combCapasitorType.Text),
-                    Voltage = Convert.ToDouble(textBox2.Text),
-                    Capasity = Convert.ToInt32(tbCapasity.Text),
-                    AllowableTemperature = Convert.ToInt32(textBox3.Text)
-                });
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = data;
-            }
-            else if (currentType == "Diode")
-            {
-                data.Add(new Diode()
-                {
-                    Model = Convert.ToString(tbName.Text),
-                    Price = Convert.ToInt32(tbPrice.Text),
-                    Description = Convert.ToString(rtbDescription.Text),
-                    Link = Convert.ToString(tbLink.Text),
-                    imageLink = Convert.ToString(tbImageLink.Text),
-                    ShellType = Convert.ToString(combDiodeShellType.Text),
-                    Voltage = Convert.ToDouble(textBox2.Text),
-                    Current = Convert.ToInt32(textBox3.Text)
-                });
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = data;
+                MessageBox.Show("Please remove extra characters (, . - = +) from the input field or change the input order");
             }
         }
         public void Save()
         {
             var options = new JsonSerializerOptions { WriteIndented = true };
+            foreach (var item in data)
+            {
+                if (item is Detail detail)
+                {
+                    detail.image = null;
+                }
+            }
             string jsonString = JsonSerializer.Serialize(data, options);
             if (currentType == "Transistor")
             {
@@ -164,9 +200,9 @@ namespace Handbook_of_radio_amateurs.Forms
             }
             else if (currentType == "Resistor")
             {
-                File.WriteAllText("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\DiodesData.json", jsonString);
+                File.WriteAllText("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\ResistorsData.json", jsonString);
             }
-
+            MessageBox.Show("The data has been saved successfully");
         }
 
         private void btSave_Click(object sender, EventArgs e)
@@ -196,10 +232,23 @@ namespace Handbook_of_radio_amateurs.Forms
                 e.Cancel = true;
             }
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void TextChanged(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                textBox2.Text = "0";
+            }
+        }
+        private void KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+        }
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Please remove letters and symbols from the number fields");
         }
     }
 }

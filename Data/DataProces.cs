@@ -35,9 +35,15 @@ namespace Handbook_of_radio_amauter.Data
                 {
                     if (item.imageLink != null)
                     {
-                        var bit1 = new Bitmap(150,150);
-                        bit1 = new Bitmap(item.imageLink);
-                        item.image = bit1;
+                        Bitmap image = new Bitmap(item.imageLink);
+                        int newWidth = 150; 
+                        int newHeight = 150; 
+                        Bitmap resizedImage = new Bitmap(newWidth, newHeight);
+                        using (Graphics graphics = Graphics.FromImage(resizedImage))
+                        {
+                            graphics.DrawImage(image, 0, 0, newWidth, newHeight);
+                        }
+                        item.image = resizedImage;
                     }
                 }
                 catch (Exception)

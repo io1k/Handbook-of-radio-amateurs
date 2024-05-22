@@ -44,10 +44,11 @@
             // 
             // tbDetails
             // 
+            resources.ApplyResources(tbDetails, "tbDetails");
             tbDetails.BackColor = SystemColors.MenuBar;
             tbDetails.BorderStyle = BorderStyle.None;
-            resources.ApplyResources(tbDetails, "tbDetails");
             tbDetails.Name = "tbDetails";
+            tbDetails.ReadOnly = true;
             tbDetails.TextChanged += tbDetails_TextChanged;
             // 
             // linkLabel1
