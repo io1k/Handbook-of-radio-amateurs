@@ -48,7 +48,7 @@ namespace Handbook_of_radio_amauter.Data
                 }
                 catch (Exception)
                 {
-                    item.image = Image.FromFile("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\src\\cprruptedFile.jpg");
+                    item.image = Image.FromFile("Data\\src\\cprruptedFile.jpg");
                 }    
             }
         }
@@ -107,10 +107,10 @@ namespace Handbook_of_radio_amauter.Data
         public List<List<object>> AddAllLists()
         {
             List<List<object>> myList = new List<List<object>>();
-            myList.Add(ReadDetails<Transistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\TransistorData.json").Select(x => (object)x).ToList());
-            myList.Add(ReadDetails<Capasitor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\CapasitorData.json").Select(x => (object)x).ToList());
-            myList.Add(ReadDetails<Diode>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\DiodesData.json").Select(x => (object)x).ToList());
-            myList.Add(ReadDetails<Resistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\ResistorsData.json").Select(x => (object)x).ToList());
+            myList.Add(ReadDetails<Transistor>("Data\\DetailsData\\TransistorData.json").Select(x => (object)x).ToList());
+            myList.Add(ReadDetails<Capasitor>("Data\\DetailsData\\CapasitorData.json").Select(x => (object)x).ToList());
+            myList.Add(ReadDetails<Diode>("Data\\DetailsData\\DiodesData.json").Select(x => (object)x).ToList());
+            myList.Add(ReadDetails<Resistor>("Data\\DetailsData\\ResistorsData.json").Select(x => (object)x).ToList());
             return myList;
         }
     }   

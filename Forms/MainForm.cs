@@ -63,7 +63,7 @@ namespace Handbook_of_radio_amateurs.Forms
             switch (combDetailType.Text.ToString())
             {
                 case "Transistor":
-                    var transistor = Proces.ReadDetails<Transistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\TransistorData.json");
+                    var transistor = Proces.ReadDetails<Transistor>("Data\\DetailsData\\TransistorData.json");
                     var sortedtrans = new List<Transistor>();
                     try
                     {
@@ -84,7 +84,7 @@ namespace Handbook_of_radio_amateurs.Forms
 
                 case "Capacitor":
 
-                    var capasitors = Proces.ReadDetails<Capasitor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\CapasitorData.json");
+                    var capasitors = Proces.ReadDetails<Capasitor>("Data\\DetailsData\\CapasitorData.json");
                     var sortedcapas = new List<Capasitor>();
                     try
                     {
@@ -104,7 +104,7 @@ namespace Handbook_of_radio_amateurs.Forms
 
                 case "Diode":
 
-                    var diodes = Proces.ReadDetails<Diode>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\DiodesData.json");
+                    var diodes = Proces.ReadDetails<Diode>("Data\\DetailsData\\DiodesData.json");
                     var sorteddiodes = new List<Diode>();
                     try
                     {
@@ -124,7 +124,7 @@ namespace Handbook_of_radio_amateurs.Forms
 
                 case "Resistor":
 
-                    var resistors = Proces.ReadDetails<Resistor>("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\ResistorsData.json");
+                    var resistors = Proces.ReadDetails<Resistor>("Data\\DetailsData\\ResistorsData.json");
                     var sortedResistors = new List<Resistor>();
                     try
                     {
