@@ -1,5 +1,4 @@
-﻿using Handbook_of_radio_amauter.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +11,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.LinkLabel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml.Linq;
+using Handbook_of_radio_amateurs.Data;
 
 namespace Handbook_of_radio_amateurs.Forms
 {
@@ -234,9 +234,9 @@ namespace Handbook_of_radio_amateurs.Forms
         }
         private void TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox2.Text))
+            if (string.IsNullOrEmpty(((System.Windows.Forms.TextBox)sender).Text))
             {
-                textBox2.Text = "0";
+                ((System.Windows.Forms.TextBox)sender).Text = "0";
             }
         }
         private void KeyPress(object sender, KeyPressEventArgs e)

@@ -1,5 +1,4 @@
-﻿using Handbook_of_radio_amateurs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -8,11 +7,11 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Handbook_of_radio_amauter.Data
+namespace Handbook_of_radio_amateurs.Data
 {
     class DataProces
     {
-        public DataProces() { } 
+        public DataProces() { }
         public List<T> ReadDetails<T>(string filePath) where T : new()
         {
             try
@@ -20,14 +19,14 @@ namespace Handbook_of_radio_amauter.Data
                 string json = File.ReadAllText(filePath);
                 return JsonSerializer.Deserialize<List<T>>(json);
             }
-            catch(Exception) 
+            catch (Exception)
             {
                 MessageBox.Show("There is a problem with the file, contact a specialist.");
-                return new List<T>() ;
+                return new List<T>();
             }
 
         }
-        public void FormPicture<T>(List<T> list)  where T : Detail
+        public void FormPicture<T>(List<T> list) where T : Detail
         {
             foreach (var item in list)
             {
@@ -36,8 +35,8 @@ namespace Handbook_of_radio_amauter.Data
                     if (item.imageLink != null)
                     {
                         Bitmap image = new Bitmap(item.imageLink);
-                        int newWidth = 150; 
-                        int newHeight = 150; 
+                        int newWidth = 150;
+                        int newHeight = 150;
                         Bitmap resizedImage = new Bitmap(newWidth, newHeight);
                         using (Graphics graphics = Graphics.FromImage(resizedImage))
                         {
@@ -49,7 +48,7 @@ namespace Handbook_of_radio_amauter.Data
                 catch (Exception)
                 {
                     item.image = Image.FromFile("Data\\src\\cprruptedFile.jpg");
-                }    
+                }
             }
         }
         public List<Transistor> SortedTransistor(List<Transistor> list, string model, string type, double voltage, double current)
@@ -58,20 +57,20 @@ namespace Handbook_of_radio_amauter.Data
 
             resultList.Sort((a, b) =>
             {
-                double scoreA = a.CalculateDeference(a,model, type, voltage, current);
-                double scoreB = b.CalculateDeference(b,model, type, voltage, current);
+                double scoreA = a.CalculateDeference(a, model, type, voltage, current);
+                double scoreB = b.CalculateDeference(b, model, type, voltage, current);
                 return scoreB.CompareTo(scoreA);
             });
 
             return resultList;
         }
-        public List<Capasitor> SortedCapasitor(List<Capasitor> list,string model, string type, double voltage, double capasity,double allovebletemp)
+        public List<Capasitor> SortedCapasitor(List<Capasitor> list, string model, string type, double voltage, double capasity, double allovebletemp)
         {
             List<Capasitor> resultList = new List<Capasitor>(list);
 
             resultList.Sort((a, b) =>
             {
-                double scoreA = a.CalculateDeference(a, model,type, allovebletemp, capasity, voltage);
+                double scoreA = a.CalculateDeference(a, model, type, allovebletemp, capasity, voltage);
                 double scoreB = b.CalculateDeference(b, model, type, allovebletemp, capasity, voltage);
                 return scoreB.CompareTo(scoreA);
             });
@@ -113,5 +112,5 @@ namespace Handbook_of_radio_amauter.Data
             myList.Add(ReadDetails<Resistor>("Data\\DetailsData\\ResistorsData.json").Select(x => (object)x).ToList());
             return myList;
         }
-    }   
-}   
+    }
+}

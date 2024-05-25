@@ -20,5 +20,38 @@
     "Link": "https://radiostore.com.ua/ua/p535103123-rezistor-vyv.html",
     "image": null,
     "imageLink": "Data\\src\\Resistor\\120-5%-0,5.jpg"
+  },
+  {
+    "Resistance": 36,
+    "Power": 5,
+    "Tolerance": 5,
+    "Model": "SQP",
+    "Price": 4.4,
+    "Description": "Resistors of the SQP series are used in industrial electronics, in the circuits of power supply units and amplifiers, during measurements as a test load, and also as heating elements (in particular, in video cameras of outdoor video surveillance).",
+    "Link": "https://radiostore.com.ua/ua/p568613287-rezistor-sqp.html",
+    "image": null,
+    "imageLink": "Data\\src\\Resistor\\sqp0.3.jpg"
+  },
+  {
+    "Resistance": 12,
+    "Power": 0.25,
+    "Tolerance": 5,
+    "Model": "",
+    "Price": 1,
+    "Description": "Most often they are used to divide or reduce voltage and control current strength.",
+    "Link": "https://radiok.com.ua/ua/p1193904132-rezistor-025w-sht.html",
+    "image": null,
+    "imageLink": "Data\\src\\Resistor\\0,25 12om \u002B-5.jpg"
+  },
+  {
+    "Resistance": 1000000,
+    "Power": 0.25,
+    "Tolerance": 5,
+    "Model": "",
+    "Price": 0.4,
+    "Description": ".",
+    "Link": "https://radiostore.com.ua/ua/p69578997-rezistor-mom-025.html",
+    "image": null,
+    "imageLink": "Data\\src\\Resistor\\1 \u041C\u041E\u043C 5% 0,25.jpg"
   }
 ]

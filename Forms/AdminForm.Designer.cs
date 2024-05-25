@@ -47,6 +47,7 @@ namespace Handbook_of_radio_amateurs.Forms
             textBox3.Text = "0";
             lbMain1.Text = "Voltage";
             lbMain2.Text = "Current";
+            tbPrice.Text = "0";
         }
 
         public void CapasitorView()
@@ -63,6 +64,7 @@ namespace Handbook_of_radio_amateurs.Forms
             lbMain1.Text = "Voltage";
             lbMain2.Text = "Available temperature";
             lbMain3.Text = "Capasity";
+            tbPrice.Text = "0";
         }
         public void DiodeView()
         {
@@ -75,6 +77,7 @@ namespace Handbook_of_radio_amateurs.Forms
             textBox3.Text = "0";
             lbMain2.Text = "Current";
             lbMain1.Text = "Voltage";
+            tbPrice.Text = "0";
 
         }
         public void ResistorView()
@@ -89,6 +92,7 @@ namespace Handbook_of_radio_amateurs.Forms
             textBox2.Text = "0";
             textBox3.Text = "0";
             tbCapasity.Text = "0";
+            tbPrice.Text = "0";
             
         }
         public void SetCurrentDetailProperty()
@@ -228,6 +232,8 @@ namespace Handbook_of_radio_amateurs.Forms
             tbPrice.Name = "tbPrice";
             tbPrice.Size = new Size(125, 27);
             tbPrice.TabIndex = 59;
+            tbPrice.TextChanged += TextChanged;
+            tbPrice.KeyPress += KeyPress;
             // 
             // tbName
             // 
@@ -281,6 +287,7 @@ namespace Handbook_of_radio_amateurs.Forms
             columDelete.HeaderText = "Delete";
             columDelete.MinimumWidth = 6;
             columDelete.Name = "columDelete";
+            columDelete.ReadOnly = true;
             // 
             // lbName
             // 
@@ -466,7 +473,6 @@ namespace Handbook_of_radio_amateurs.Forms
         private Button btAdd;
         private Button btSave;
         public DataGridView dataGridView1;
-        private DataGridViewButtonColumn columDelete;
         private Label lbName;
         private Label lbMain3;
         private Label lbMain2;
@@ -480,5 +486,6 @@ namespace Handbook_of_radio_amateurs.Forms
         private ComboBox combTransistorType;
         private TextBox textBox3;
         private TextBox textBox2;
+        private DataGridViewButtonColumn columDelete;
     }
 }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Handbook_of_radio_amauter.Data.DataProces;
 
 namespace Handbook_of_radio_amateurs
 {

@@ -144,7 +144,7 @@
         }
         public void SetIconSize()
         {
-            Bitmap b1 = new Bitmap("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\input-onlinebitmaptools.bmp");
+            Bitmap b1 = new Bitmap("Data\\adminIcon.png");
             Bitmap b2 = new Bitmap(b1, new Size(50, 50));
             btAdmin.Image = b2;
 
@@ -173,11 +173,6 @@
             lbMainDetailTypeSelect = new Label();
             btSearch = new Button();
             dataGridView1 = new DataGridView();
-            lbDiodeShellType = new Label();
-            combDiodeShellType = new ComboBox();
-            lbMain1 = new Label();
-            lbMain2 = new Label();
-            lbMain3 = new Label();
             imgColum = new DataGridViewImageColumn();
             columType = new DataGridViewTextBoxColumn();
             columResistance = new DataGridViewTextBoxColumn();
@@ -190,6 +185,11 @@
             allowebleTempColum = new DataGridViewTextBoxColumn();
             priceColum = new DataGridViewTextBoxColumn();
             btDetails = new DataGridViewButtonColumn();
+            lbDiodeShellType = new Label();
+            combDiodeShellType = new ComboBox();
+            lbMain1 = new Label();
+            lbMain2 = new Label();
+            lbMain3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -234,10 +234,10 @@
             // 
             btAdmin.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btAdmin.BackColor = SystemColors.Menu;
-            btAdmin.FlatStyle = FlatStyle.Flat;
+            btAdmin.FlatStyle = FlatStyle.Popup;
             btAdmin.ForeColor = SystemColors.Menu;
             btAdmin.ImeMode = ImeMode.NoControl;
-            btAdmin.Location = new Point(12, 517);
+            btAdmin.Location = new Point(18, 517);
             btAdmin.Name = "btAdmin";
             btAdmin.Size = new Size(48, 48);
             btAdmin.TabIndex = 34;
@@ -339,50 +339,9 @@
             dataGridView1.TabIndex = 23;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // lbDiodeShellType
-            // 
-            lbDiodeShellType.AutoSize = true;
-            lbDiodeShellType.Location = new Point(21, 222);
-            lbDiodeShellType.Name = "lbDiodeShellType";
-            lbDiodeShellType.Size = new Size(159, 20);
-            lbDiodeShellType.TabIndex = 40;
-            lbDiodeShellType.Text = "Select diode shell type";
-            // 
-            // combDiodeShellType
-            // 
-            combDiodeShellType.FormattingEnabled = true;
-            combDiodeShellType.Items.AddRange(new object[] { "DO-41", "DO-15", "DO-27", "DO-41" });
-            combDiodeShellType.Location = new Point(18, 245);
-            combDiodeShellType.Name = "combDiodeShellType";
-            combDiodeShellType.Size = new Size(125, 28);
-            combDiodeShellType.TabIndex = 41;
-            // 
-            // lbMain1
-            // 
-            lbMain1.AutoSize = true;
-            lbMain1.Location = new Point(21, 276);
-            lbMain1.Name = "lbMain1";
-            lbMain1.Size = new Size(0, 20);
-            lbMain1.TabIndex = 42;
-            // 
-            // lbMain2
-            // 
-            lbMain2.AutoSize = true;
-            lbMain2.Location = new Point(21, 328);
-            lbMain2.Name = "lbMain2";
-            lbMain2.Size = new Size(0, 20);
-            lbMain2.TabIndex = 43;
-            // 
-            // lbMain3
-            // 
-            lbMain3.AutoSize = true;
-            lbMain3.Location = new Point(21, 381);
-            lbMain3.Name = "lbMain3";
-            lbMain3.Size = new Size(0, 20);
-            lbMain3.TabIndex = 44;
-            // 
             // imgColum
             // 
+            imgColum.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             imgColum.DataPropertyName = "image";
             imgColum.HeaderText = "";
             imgColum.MinimumWidth = 150;
@@ -474,6 +433,49 @@
             btDetails.HeaderText = "More detail";
             btDetails.MinimumWidth = 6;
             btDetails.Name = "btDetails";
+            btDetails.ReadOnly = true;
+            // 
+            // lbDiodeShellType
+            // 
+            lbDiodeShellType.AutoSize = true;
+            lbDiodeShellType.Location = new Point(21, 222);
+            lbDiodeShellType.Name = "lbDiodeShellType";
+            lbDiodeShellType.Size = new Size(159, 20);
+            lbDiodeShellType.TabIndex = 40;
+            lbDiodeShellType.Text = "Select diode shell type";
+            // 
+            // combDiodeShellType
+            // 
+            combDiodeShellType.FormattingEnabled = true;
+            combDiodeShellType.Items.AddRange(new object[] { "DO-41", "DO-15", "DO-27", "DO-41" });
+            combDiodeShellType.Location = new Point(18, 245);
+            combDiodeShellType.Name = "combDiodeShellType";
+            combDiodeShellType.Size = new Size(125, 28);
+            combDiodeShellType.TabIndex = 41;
+            // 
+            // lbMain1
+            // 
+            lbMain1.AutoSize = true;
+            lbMain1.Location = new Point(21, 276);
+            lbMain1.Name = "lbMain1";
+            lbMain1.Size = new Size(0, 20);
+            lbMain1.TabIndex = 42;
+            // 
+            // lbMain2
+            // 
+            lbMain2.AutoSize = true;
+            lbMain2.Location = new Point(21, 328);
+            lbMain2.Name = "lbMain2";
+            lbMain2.Size = new Size(0, 20);
+            lbMain2.TabIndex = 43;
+            // 
+            // lbMain3
+            // 
+            lbMain3.AutoSize = true;
+            lbMain3.Location = new Point(21, 381);
+            lbMain3.Name = "lbMain3";
+            lbMain3.Size = new Size(0, 20);
+            lbMain3.TabIndex = 44;
             // 
             // MainForm
             // 

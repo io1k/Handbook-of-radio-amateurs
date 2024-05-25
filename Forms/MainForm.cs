@@ -1,6 +1,5 @@
 ﻿using Handbook_of_amaters_try.Forms;
 using Handbook_of_amaters_try;
-using Handbook_of_radio_amauter.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Handbook_of_radio_amateurs.Data;
 
 namespace Handbook_of_radio_amateurs.Forms
 {
@@ -21,8 +21,8 @@ namespace Handbook_of_radio_amateurs.Forms
             var proces = new DataProces();
             InitializeComponent();
             Hide();
-            SetIconSize();
             currentDetailList = proces.AddAllLists();
+            SetIconSize();
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -150,27 +150,31 @@ namespace Handbook_of_radio_amateurs.Forms
                 case "Transistor":
                     Hide();
                     TransistorView();
+                    dataGridView1.DataSource = new List<Transistor>();
                     break;
                 case "Capacitor":
                     Hide();
                     CapasitorView();
+                    dataGridView1.DataSource = new List<Capasitor>(); ;
                     break;
                 case "Diode":
                     Hide();
                     DiodeView();
+                    dataGridView1.DataSource = new List<Diode>(); ;
                     break;
                 case "Resistor":
                     Hide();
                     ResistorView();
+                    dataGridView1.DataSource = new List<Resistor>(); ;
                     break;
             }
         }
 
         private void TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox2.Text))
+            if (string.IsNullOrEmpty(((System.Windows.Forms.TextBox)sender).Text))
             {
-                textBox2.Text = "0";
+                ((System.Windows.Forms.TextBox)sender).Text = "0";
             }
         }
         private void KeyPress(object sender, KeyPressEventArgs e)
@@ -179,15 +183,6 @@ namespace Handbook_of_radio_amateurs.Forms
             {
                 e.Handled = true;
             }
-        }
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            if (keyData == Keys.F1)
-            {
-                var helpForm = new Help();
-                helpForm.Show();
-            }
-            return base.ProcessCmdKey(ref msg, keyData);
         }
         private void btAdmin_Click(object sender, EventArgs e)
         {
