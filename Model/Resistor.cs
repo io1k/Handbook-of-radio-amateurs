@@ -12,8 +12,12 @@ namespace Handbook_of_radio_amateurs
         public double Resistance {  get; set; }
         public double Power { get; set; }
         public int Tolerance { get; set; }
-        public double CalculateDeference(Resistor resistor, string model,double resistance,int tolerance)
+        public override double CalculateDeference(params object[] numbers)
         {
+            var resistor = (Resistor)numbers[0];
+            var model = (string)numbers[1];
+            var resistance = (double)numbers[2];
+            var tolerance = (int)numbers[3];
             double resistenceDifference = Math.Abs(resistor.Resistance - resistance);
             double toleranceDifference = Math.Abs(resistor.Tolerance - tolerance);
             double score = 15000 - (resistenceDifference * 10) - (toleranceDifference * 10);

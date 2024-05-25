@@ -188,19 +188,19 @@ namespace Handbook_of_radio_amateurs.Forms
             string jsonString = JsonSerializer.Serialize(data, options);
             if (currentType == "Transistor")
             {
-                File.WriteAllText("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\TransistorData.json", jsonString);
+                File.WriteAllText("Data\\DetailsData\\TransistorData.json", jsonString);
             }
             else if (currentType == "Capacitor")
             {
-                File.WriteAllText("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\CapasitorData.json", jsonString);
+                File.WriteAllText("Data\\DetailsData\\CapasitorData.json", jsonString);
             }
             else if (currentType == "Diode")
             {
-                File.WriteAllText("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\DiodesData.json", jsonString);
+                File.WriteAllText("Data\\DetailsData\\DiodesData.json", jsonString);
             }
             else if (currentType == "Resistor")
             {
-                File.WriteAllText("C:\\Users\\iolk\\Desktop\\visual folder\\Handbook of radio amateurs\\Data\\DetailsData\\ResistorsData.json", jsonString);
+                File.WriteAllText("Data\\DetailsData\\ResistorsData.json", jsonString);
             }
             MessageBox.Show("The data has been saved successfully");
         }

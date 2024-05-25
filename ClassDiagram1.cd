@@ -3,26 +3,26 @@
   <Class Name="Handbook_of_radio_amateurs.Detail">
     <Position X="6.25" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAgAAAAAAAAAAAAEAAAAAIAAAgAQAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAQAhAAAAAAAAAAAAEAAAAAIAAAgAQAAAAAA=</HashCode>
       <FileName>Model\Detail.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Handbook_of_radio_amateurs.Capasitor">
-    <Position X="9" Y="3" Width="1.5" />
+    <Position X="8.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACAIBAAAAgAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Model\Capasitor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Handbook_of_radio_amateurs.Diode">
-    <Position X="6" Y="5.25" Width="1.5" />
+    <Position X="6.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAAAgACAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Diodecs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Handbook_of_radio_amateurs.Resistor">
-    <Position X="3" Y="2.25" Width="1.5" />
+    <Position X="3.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAADAAAAAAAAAAAAAAAAAAABAAAAAAAIAAA=</HashCode>
       <FileName>Model\Resistor.cs</FileName>
@@ -36,51 +36,163 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Handbook_of_radio_amateurs.Data.DataProces">
-    <Position X="10.75" Y="0.5" Width="1.5" />
+    <Position X="10.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAABAAAAAAIAABAAAAAAAAAAAACACAAAAAAAQA=</HashCode>
       <FileName>Data\DataProces.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Handbook_of_radio_amateurs.Forms.AdminForm">
-    <Position X="14.5" Y="3.5" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-    </Compartments>
+    <Position X="16.5" Y="6" Width="1.5" />
+    <Members>
+      <Method Name="AdminForm" Hidden="true" />
+      <Field Name="btAdd" Hidden="true" />
+      <Field Name="btSave" Hidden="true" />
+      <Method Name="CapasitorView" Hidden="true" />
+      <Field Name="columDelete" Hidden="true" />
+      <Field Name="combCapasitorType" Hidden="true" />
+      <Field Name="combDiodeShellType" Hidden="true" />
+      <Field Name="combTransistorType" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="dataGridView1" Hidden="true" />
+      <Method Name="dataGridView1_DataError" Hidden="true" />
+      <Method Name="DiodeView" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="Hide" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Method Name="KeyPress" Hidden="true" />
+      <Field Name="lbCapacitorType" Hidden="true" />
+      <Field Name="lbDescription" Hidden="true" />
+      <Field Name="lbDiodeShellType" Hidden="true" />
+      <Field Name="lbImageLInk" Hidden="true" />
+      <Field Name="lbLink" Hidden="true" />
+      <Field Name="lbMain1" Hidden="true" />
+      <Field Name="lbMain2" Hidden="true" />
+      <Field Name="lbMain3" Hidden="true" />
+      <Field Name="lbName" Hidden="true" />
+      <Field Name="lbPrice" Hidden="true" />
+      <Field Name="lbTransistorType" Hidden="true" />
+      <Method Name="ResistorView" Hidden="true" />
+      <Field Name="rtbDescription" Hidden="true" />
+      <Method Name="SetCurrentDetailProperty" Hidden="true" />
+      <Field Name="tbCapasity" Hidden="true" />
+      <Field Name="tbImageLink" Hidden="true" />
+      <Field Name="tbLink" Hidden="true" />
+      <Field Name="tbName" Hidden="true" />
+      <Field Name="tbPrice" Hidden="true" />
+      <Field Name="textBox2" Hidden="true" />
+      <Field Name="textBox3" Hidden="true" />
+      <Method Name="TextChanged" Hidden="true" />
+      <Method Name="TransistorView" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AyLIOICCGTUEQAAIMQGAAABSAIkAABQQAAAQAAABAYQ=</HashCode>
       <FileName>Forms\AdminForm.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="dataProces" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Handbook_of_amaters_try.Details">
-    <Position X="16.25" Y="3.5" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-    </Compartments>
+    <Position X="13.25" Y="0.75" Width="1.5" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Method Name="Details" Hidden="true" />
+      <Method Name="Details_Load" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Method Name="label1_Click" Hidden="true" />
+      <Method Name="linkLabel1_LinkClicked" Hidden="true" />
+      <Method Name="richTextBox1_TextChanged" Hidden="true" />
+      <Method Name="tbDetails_TextChanged" Hidden="true" />
+    </Members>
     <TypeIdentifier>
       <HashCode>AAEAAAQAACAAABEAAASAAAACAAAwAAAAAIAAAgAAAAA=</HashCode>
       <FileName>Forms\Details.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Handbook_of_radio_amateurs.Forms.MainForm">
-    <Position X="11" Y="3.5" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-    </Compartments>
+    <Position X="13.25" Y="3.5" Width="1.75" />
+    <Members>
+      <Field Name="allowebleTempColum" Hidden="true" />
+      <Field Name="btAdmin" Hidden="true" />
+      <Field Name="btDetails" Hidden="true" />
+      <Field Name="btSearch" Hidden="true" />
+      <Method Name="CapasitorView" Hidden="true" />
+      <Field Name="capasityColum" Hidden="true" />
+      <Field Name="columResistance" Hidden="true" />
+      <Field Name="columShellType" Hidden="true" />
+      <Field Name="columTolerance" Hidden="true" />
+      <Field Name="columType" Hidden="true" />
+      <Field Name="combCapasitorType" Hidden="true" />
+      <Field Name="combDetailType" Hidden="true" />
+      <Field Name="combDiodeShellType" Hidden="true" />
+      <Field Name="combTransistorType" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="currentColum" Hidden="true" />
+      <Field Name="currentDetailList" Hidden="true" />
+      <Method Name="DataGridColumHide" Hidden="true" />
+      <Field Name="dataGridView1" Hidden="true" />
+      <Method Name="DiodeView" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="Hide" Hidden="true" />
+      <Field Name="imgColum" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="lbCapacitorType" Hidden="true" />
+      <Field Name="lbDiodeShellType" Hidden="true" />
+      <Field Name="lbMain1" Hidden="true" />
+      <Field Name="lbMain2" Hidden="true" />
+      <Field Name="lbMain3" Hidden="true" />
+      <Field Name="lbMainDetailTypeSelect" Hidden="true" />
+      <Field Name="lbModel" Hidden="true" />
+      <Field Name="lbTransistorType" Hidden="true" />
+      <Method Name="MainForm" Hidden="true" />
+      <Field Name="priceColum" Hidden="true" />
+      <Method Name="ResistorView" Hidden="true" />
+      <Method Name="SetIconSize" Hidden="true" />
+      <Field Name="tbCapasity" Hidden="true" />
+      <Field Name="tbModel" Hidden="true" />
+      <Field Name="textBox2" Hidden="true" />
+      <Field Name="textBox3" Hidden="true" />
+      <Method Name="TransistorView" Hidden="true" />
+      <Field Name="typeColum" Hidden="true" />
+      <Field Name="voltageColum" Hidden="true" />
+    </Members>
     <TypeIdentifier>
-      <HashCode>AyDAAYgCASEiQAAINQSIEBBCEMxgABQAgAEAgMA0AYA=</HashCode>
+      <HashCode>A6DAAYgCASEjQAAINQSIEBBCEMxgEBQAgAEAgMA0AYA=</HashCode>
       <FileName>Forms\MainForm.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DataProces" />
+      <Property Name="Details" />
+      <Property Name="PasswordForm" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Handbook_of_amaters_try.Forms.PasswordForm">
-    <Position X="12.75" Y="3.5" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-    </Compartments>
+    <Position X="16.25" Y="3.5" Width="1.75" />
+    <Members>
+      <Field Name="btEnter" Hidden="true" />
+      <Method Name="btEnter_Click" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="dataProces" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="lbEnterPassword" Hidden="true" />
+      <Method Name="lbEnterPassword_Click" Hidden="true" />
+      <Field Name="password" Hidden="true" />
+      <Method Name="PasswordForm" Hidden="true" />
+      <Field Name="tbPassword" Hidden="true" />
+      <Method Name="tbPassword_TextChanged" Hidden="true" />
+    </Members>
     <TypeIdentifier>
-      <HashCode>AAAQAACABCAAAAAAAACAAAAiAAAgAIAQAgAAAgAEAAE=</HashCode>
+      <HashCode>AAAQAACADCAAAAAAAACAAAAiAAAgAIAQAgAAAgAEAAE=</HashCode>
       <FileName>Forms\PasswordForm.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="dataProces" />
+      <Property Name="AdminForm" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

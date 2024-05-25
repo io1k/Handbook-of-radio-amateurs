@@ -27,6 +27,14 @@ namespace Handbook_of_amaters_try.Forms
             currentType = type;
         }
 
+        public AdminForm AdminForm
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void tbPassword_TextChanged(object sender, EventArgs e)
         {
 

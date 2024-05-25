@@ -19,5 +19,7 @@ namespace Handbook_of_radio_amateurs
         public string Link { get; set; }
         public Image image { get; set; }
         public string imageLink { get; set; }
+        public abstract double CalculateDeference(params object[] numbers);
+
     }
 }
