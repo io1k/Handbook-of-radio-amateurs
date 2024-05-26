@@ -24,31 +24,6 @@ namespace Handbook_of_radio_amateurs.Forms
             currentDetailList = proces.AddAllLists();
             SetIconSize();
         }
-
-        internal DataProces DataProces
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public Details Details
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public PasswordForm PasswordForm
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == btDetails.Index && e.RowIndex >= 0)

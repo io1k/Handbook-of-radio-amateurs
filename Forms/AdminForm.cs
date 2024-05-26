@@ -203,6 +203,7 @@ namespace Handbook_of_radio_amateurs.Forms
                 File.WriteAllText("Data\\DetailsData\\ResistorsData.json", jsonString);
             }
             MessageBox.Show("The data has been saved successfully");
+            dataProces.FormPicture(data.OfType<Detail>().ToList());
         }
 
         private void btSave_Click(object sender, EventArgs e)
